@@ -21,7 +21,6 @@ My name is Sadra Shameli and I'm an 19 y.o Back-End & Embedded Developer based i
    * **I’m currently working on**
       * [ProjectAI](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
       * [ProjectGameEngine](https://github.com/leonardssh/leonard.sh) - Realtime game engine based on DirectX 12
-  
    * **Fun fact** - My name is always mistaken with 'Sandra'.
 
 ---
@@ -29,8 +28,8 @@ My name is Sadra Shameli and I'm an 19 y.o Back-End & Embedded Developer based i
 ### 💻 Tech Stack
 These are my favorite tech stack for building all kinds of stuff.
 
-   * **Backend** - C# with ASP.Net
-   * **Frontend** - TypeScript, React/NextJS, Material UI
+   * **Backend** - C#, ASP.NET
+   * **Frontend** - TypeScript, React.js, Next.js, Material UI
    * **Scripting** - Python3, Bash
    * **Database** - SQL Server   
    * **Tools** - Azure DevOps, SQL Server, Azure Data Studio   
