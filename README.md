@@ -1,4 +1,4 @@
-My name is Sadra Shameli and I'm an 19 y.o Back-End & Embedded Developer based in Rotterdam, The Netherlands.
+My name is Sadra Shameli and I'm an 19 y.o Full-Stack & Embedded Developer based in Rotterdam, The Netherlands.
 
 <p align="center">
    <a href="https://www.youtube.com/@SadraShameli" target="_blank" style="text-decoration:none;">
@@ -34,9 +34,9 @@ These are my favorite tech stack for building all kinds of stuff.
    * **Scripting** - Python3, Bash
    * **Database** - SQL Server   
    * **Tools** - Azure DevOps, SQL Server, Azure Data Studio   
-   * **Embedded** - C/C++, Python3, MicroPython   
-   * **3D Printers** - Prusa i3 MK3S+, Prusa Mini+, Vertex K8400
+   * **Embedded** - C/C++, Python3, MicroPython      
    * **Embedded Tools** - Fusion 360, PrusaSlicer, Ultimaker Cura, Altium, Proteus
+   * **3D Printers** - Prusa i3 MK3S+, Prusa Mini+, Vertex K8400
 
 ---
 
