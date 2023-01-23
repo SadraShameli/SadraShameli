@@ -1,3 +1,4 @@
+
 My name is Sadra Shameli and I'm an 19 y.o Full-Stack & Embedded Developer based in Rotterdam, The Netherlands.
 
 <p align="center">
@@ -19,11 +20,12 @@ My name is Sadra Shameli and I'm an 19 y.o Full-Stack & Embedded Developer based
 
 ### 👨‍💻 What I do
    * **I’m currently working on**
-      * [ProjectAI](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
-      * [ProjectGameEngine](https://github.com/SadraShameli/ProjectGameEngine) - Realtime game engine based on DirectX 12
+      * [**Geluidsvervuiling.eu**](https://geluidsvervuiling.eu) - Analyzing sound polution in different locations of Rotterdam.
+      * [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
+      * [**ProjectGameEngine**](https://github.com/SadraShameli/ProjectGameEngine) - Realtime game engine based on DirectX 12
    * **Fun fact** - My name is always mistaken with 'Sandra'.
-   * **Documents** - [My CV](Documents/CV.pdf "download")
-
+   * **Documents** - [My CV](Documents/CV.pdf "Cv.pdf")
+   
 ---
 
 ### 💻 Tech Stack
@@ -37,7 +39,7 @@ These are my favorite tech stack for building all kinds of stuff.
    * **Embedded** - C/C++, Python3, MicroPython      
    * **Embedded Tools** - Fusion 360, PrusaSlicer, Ultimaker Cura, Altium, Proteus
    * **3D Printers** - Prusa i3 MK3S+, Prusa Mini+, Vertex K8400
-
+   
 ---
 
 ### 🌐 My Projects
