@@ -1,4 +1,3 @@
-
 My name is Sadra Shameli and I'm an 19 y.o Full-Stack & Embedded Developer based in Rotterdam, The Netherlands.
 
 <p align="center">
@@ -19,27 +18,30 @@ My name is Sadra Shameli and I'm an 19 y.o Full-Stack & Embedded Developer based
 ---
 
 ### 👨‍💻 What I do
-   * **I’m currently working on**
-      * [**Geluidsvervuiling.eu**](https://geluidsvervuiling.eu) - Analyzing sound polution in different locations of Rotterdam.
-      * [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
-      * [**ProjectGameEngine**](https://github.com/SadraShameli/ProjectGameEngine) - Realtime game engine based on DirectX 12
-   * **Fun fact** - My name is always mistaken with 'Sandra'.
-   * **Documents** - [My CV](Documents/CV.pdf "Cv.pdf")
-   
+
+- **I’m currently working on**
+  - [**Geluidsvervuiling.eu**](https://geluidsvervuiling.eu) - Analyzing sound pollution in different locations of Rotterdam.
+  - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
+  - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce website
+  - [**ProjectGameEngine**](https://github.com/SadraShameli/ProjectGameEngine) - Realtime game engine based on DirectX 12
+- **Fun fact** - My name is always mistaken with 'Sandra'.
+- **Documents** - [My CV](Documents/CV.pdf "Cv.pdf")
+
 ---
 
 ### 💻 Tech Stack
+
 These are my favorite tech stack for building all kinds of stuff.
 
-   * **Backend** - C#, ASP.NET
-   * **Frontend** - TypeScript, React.js, Next.js, Material UI
-   * **Scripting** - Python3, Bash
-   * **Database** - SQL Server   
-   * **Tools** - Azure DevOps, SQL Server, Azure Data Studio   
-   * **Embedded** - C/C++, Python3, MicroPython      
-   * **Embedded Tools** - Fusion 360, PrusaSlicer, Ultimaker Cura, Altium, Proteus
-   * **3D Printers** - Prusa i3 MK3S+, Prusa Mini+, Vertex K8400
-   
+- **Backend** - C#, ASP.NET
+- **Frontend** - TypeScript, React.js, Next.js, Material UI
+- **Scripting** - Python3, Bash
+- **Database** - SQL Server
+- **Tools** - Azure DevOps, SQL Server, Azure Data Studio
+- **Embedded** - C/C++, Python3, MicroPython
+- **Embedded Tools** - Fusion 360, PrusaSlicer, Ultimaker Cura, Altium, Proteus
+- **3D Printers** - Prusa i3 MK3S+, Prusa Mini+, Vertex K8400
+
 ---
 
 ### 🌐 My Projects
@@ -48,11 +50,8 @@ These are my favorite tech stack for building all kinds of stuff.
 
 ![ProjectAI](Images/ProjectAI.jpg "ProjectAI")
 
-
 ![Units](Images/Units.jpg "Units")
 
-
 ![Units2](Images/Units2.jpg "Units2")
-
 
 ![Robot](Images/Robot.jpg "Robot")
