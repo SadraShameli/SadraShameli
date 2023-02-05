@@ -35,10 +35,10 @@ These are my favorite tech stack for building all kinds of stuff.
 
 - **Backend** - C#, ASP.NET
 - **Frontend** - TypeScript, React.js, Next.js, Material UI
-- **Scripting** - Python3, Bash
-- **Database** - SQL Server
+- **API** - tRPC, REST
+- **Database** - Prisma, PostgreSQL, SQL Server
 - **Tools** - Azure DevOps, SQL Server, Azure Data Studio
-- **Embedded** - C/C++, Python3, MicroPython
+- **Embedded** - C/C++, Python 3, MicroPython
 - **Embedded Tools** - Fusion 360, PrusaSlicer, Ultimaker Cura, Altium, Proteus
 - **3D Printers** - Prusa i3 MK3S+, Prusa Mini+, Vertex K8400
 
