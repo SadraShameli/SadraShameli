@@ -20,7 +20,8 @@ My name is Sadra Shameli and I'm an 19 y.o Full-Stack & Embedded Developer based
 ### 👨‍💻 What I do
 
 - **I’m currently working on**
-  - [**Geluidsvervuiling.eu**](https://geluidsvervuiling.eu) - Analyzing sound pollution in different locations of Rotterdam.
+  - [**geluidsvervuiling.eu**](https://geluidsvervuiling.eu) - Analyzing sound pollution in different locations of Rotterdam.
+  - [**sadra.nl**](https://sadra.nl) - My personal website and resume
   - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
   - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce website
   - [**ProjectGameEngine**](https://github.com/SadraShameli/ProjectGameEngine) - Realtime game engine based on DirectX 12
@@ -33,11 +34,10 @@ My name is Sadra Shameli and I'm an 19 y.o Full-Stack & Embedded Developer based
 
 These are my favorite tech stack for building all kinds of stuff.
 
-- **Backend** - C#, ASP.NET
-- **Frontend** - TypeScript, React.js, Next.js, Material UI
-- **API** - tRPC, REST
-- **Database** - Prisma, PostgreSQL, SQL Server
-- **Tools** - Azure DevOps, SQL Server, Azure Data Studio
+- **Frontend** - TypeScript, React, Next.js, Tailwind CSS, Daisy UI, Material UI
+- **Backend** - tRPC, Prisma, NextAuth.js, ASP.NET, REST API, Web API, MVC
+- **Databases** - PostgreSQL, SQL Server
+- **Tools** - Prisma Studio, SQL Server Management Studio, Azure Data Studio, Azure DevOps
 - **Embedded** - C/C++, Python 3, MicroPython
 - **Embedded Tools** - Fusion 360, PrusaSlicer, Ultimaker Cura, Altium, Proteus
 - **3D Printers** - Prusa i3 MK3S+, Prusa Mini+, Vertex K8400
