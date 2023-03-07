@@ -1,6 +1,6 @@
 I'm Sadra Shameli. 19 y/o full-stack & embedded developer based in Rotterdam, The Netherlands.
 
-<p style="text-align:center">
+<p align="center">
    <a href="https://www.youtube.com/@SadraShameli" target="_blank" style="text-decoration:none;">
       <img src="Assets/youtube.svg" alt="YouTube" width="32" align="center">
    </a>   
