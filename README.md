@@ -1,6 +1,6 @@
-My name is Sadra Shameli and I'm an 19 y.o Full-Stack & Embedded Developer based in Rotterdam, The Netherlands.
+I'm Sadra Shameli. 19 y/o full-stack & embedded developer based in Rotterdam, The Netherlands.
 
-<p align="center">
+<p style="text-align:center">
    <a href="https://www.youtube.com/@SadraShameli" target="_blank" style="text-decoration:none;">
       <img src="Assets/youtube.svg" alt="YouTube" width="32" align="center">
    </a>   
@@ -10,7 +10,7 @@ My name is Sadra Shameli and I'm an 19 y.o Full-Stack & Embedded Developer based
    <a href="mailto:sadra.shameli1@gmail.com" target="_blank" style="text-decoration:none;">
       <img src="Assets/gmail.svg" alt="Gmail" width="32" align="center">
    </a>
-   <a href="https://www.linkedin.com/in/sadra-shameli-35844b1b3" target="_blank" style="text-decoration:none;">
+   <a href="https://www.linkedin.com/in/sadrashameli" target="_blank" style="text-decoration:none;">
       <img src="Assets/linkedin.svg" alt="Linkedin" width="32" align="center">
    </a>   
 </p>
