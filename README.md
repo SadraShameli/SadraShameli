@@ -34,12 +34,11 @@ I'm Sadra Shameli. 20 y/o full-stack & embedded developer based in Rotterdam, Th
 
 These are my favorite tech stack for building all kinds of stuff.
 
-- **Frontend** - TypeScript, React, Next.js, Tailwind CSS, Daisy UI, Material UI
-- **Backend** - tRPC, Prisma, NextAuth.js, ASP.NET, REST API, Web API, MVC
+- **Frontend** - TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, Daisy UI, Material UI
+- **Backend** - tRPC, Drizzle, Prisma, NextAuth.js, ASP.NET, Django, DRF
 - **Databases** - PostgreSQL, SQL Server
-- **Tools** - Prisma Studio, SQL Server Management Studio, Azure Data Studio, Azure DevOps
-- **Embedded** - C/C++, Python 3, MicroPython
-- **Embedded Tools** - Fusion 360, PrusaSlicer, Ultimaker Cura, Altium, Proteus
+- **Embedded** - C/C++, Python on ESP32 & Arduino
+- **Embedded Tools** - Fusion 360, PrusaSlicer, Ultimaker Cura
 - **3D Printers** - Prusa i3 MK3S+, Prusa Mini+, Vertex K8400
 
 ---
