@@ -1,4 +1,4 @@
-I'm Sadra Shameli. 20 y/o full-stack & embedded developer based in Rotterdam, The Netherlands.
+I'm Sadra Shameli. 20 years old full-stack & IoT developer based in Rotterdam, The Netherlands.
 
 <p align="center">
    <a href="https://www.youtube.com/@SadraShameli" target="_blank" style="text-decoration:none;">
