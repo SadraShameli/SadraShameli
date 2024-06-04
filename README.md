@@ -18,14 +18,15 @@ I'm Sadra Shameli. 20 y/o full-stack & embedded developer based in Rotterdam, Th
 
 - **I’m currently working on**
   - [**sadra.nl**](https://sadra.nl) - My personal website and resume
+  - [**Resume**](https://github.com/SadraShameli/Resume) - Resume Generator
+  - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce store
   - [**geluidsvervuiling.eu**](https://geluidsvervuiling.eu) - Analyzing sound pollution in different locations of Rotterdam.
   - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
-  - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce website
   - [**ProjectGameEngine**](https://github.com/SadraShameli/ProjectGameEngine) - Realtime game engine based on DirectX 12
 - **Documents**
-  - [**Profielwerkstuk**](Documents/PWS%20-%20Artificial%20Intelligence.pdf "PWS - Artificial Intelligence") - My school research project
   - [**Curriculum Vitae**](Documents/CV.pdf "Curriculum Vitae")
   - [**Letter of Recommendation**](Documents/Letter%20of%20Recommendation.pdf "Letter of Recommendation")
+  - [**Profielwerkstuk**](Documents/PWS%20-%20Artificial%20Intelligence.pdf "PWS - Artificial Intelligence") - Research document for Project A.I.
 - **Fun fact** - My name is always mistaken with 'Sandra'.
 
 ---
