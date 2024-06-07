@@ -21,7 +21,6 @@ I'm Sadra Shameli. 20 years old full-stack & IoT developer based in Rotterdam, T
   - [**Resume**](https://github.com/SadraShameli/Resume) - Resume generator
   - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce store
   - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
-  - [**ProjectGameEngine**](https://github.com/SadraShameli/ProjectGameEngine) - Realtime game engine based on DirectX 12
 - **Documents**
   - [**Curriculum Vitae**](Documents/CV.pdf "Curriculum Vitae")
   - [**Letter of Recommendation**](Documents/Letter%20of%20Recommendation.pdf "Letter of Recommendation")
