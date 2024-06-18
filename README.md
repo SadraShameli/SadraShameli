@@ -64,6 +64,13 @@ These are my favorite tech stack for building all kinds of stuff.
 <br>
 
 <details open>
+  <summary><b>Social Robot</b></summary>
+  <img src="Images/SocialRobot.jpg.jpg" />
+</details>
+
+<br>
+
+<details open>
   <summary><b>Robot</b></summary>
   <img src="Images/Robot.jpg" />
 </details>
