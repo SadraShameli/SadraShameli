@@ -12,7 +12,7 @@ Checkout my [Website](https://sadra.nl), [YouTube](https://youtube.com/@SadraSha
   - [**sadra.nl**](https://github.com/SadraShameli/sadra.nl) - My personal portfolio
   - [**Resume**](https://github.com/SadraShameli/Resume) - Resume generator
   - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce store
-  - [**SensorHub Firmware**](https://github.com/SadraShameli/SensorHub-Firmware) - Firmware of the devices that communicate to [sadra.nl](https://sadra.nl)
+  - [**SensorHub**](https://github.com/SadraShameli/SensorHub) - Devices that communicate to [sadra.nl](https://sadra.nl)
   - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
   - [**SpotDL**](https://github.com/SadraShameli/spotdl) - Python script for downloading Spotify songs
 - **Documents**
