@@ -13,7 +13,6 @@ Checkout my [Website](https://sadra.nl), [YouTube](https://youtube.com/@SadraSha
   - [**Resume**](https://github.com/SadraShameli/Resume) - Resume generator
   - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce store
   - [**SensorHub Firmware**](https://github.com/SadraShameli/SensorHub-Firmware) - Firmware of the devices that communicate to [sadra.nl](https://sadra.nl)
-  - [**SensorHub Backend**](https://github.com/SadraShameli/SensorHub-Backend) - Backend for [sadra.nl](https://sadra.nl), ported to Django
   - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
   - [**SpotDL**](https://github.com/SadraShameli/spotdl) - Python script for downloading Spotify songs
 - **Documents**
@@ -29,7 +28,7 @@ Checkout my [Website](https://sadra.nl), [YouTube](https://youtube.com/@SadraSha
 These are my favorite tech stack for building all kinds of stuff.
 
 - **Frontend** - TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, Daisy UI, Material UI
-- **Backend** - tRPC, Drizzle, Prisma, NextAuth.js, ASP.NET, Entity Framework, Django, DRF
+- **Backend** - tRPC, Drizzle, Prisma, NextAuth.js, ASP.NET, Entity Framework
 - **Databases** - PostgreSQL, SQL Server
 - **Embedded** - C/C++, Python on ESP32 & Arduino
 - **Embedded Tools** - Fusion 360, PrusaSlicer, Ultimaker Cura
