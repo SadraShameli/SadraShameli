@@ -1,6 +1,6 @@
 Hi, my name is Sadra.
 
-I'm a full-stack & IoT developer based in Rijswijk, The Netherlands. I have always been passionate about building cool robots and apps.
+I'm a full-stack developer based in Rijswijk, The Netherlands. I have always been passionate about building cool robots and apps.
 
 Checkout my [Website](https://sadra.nl), [YouTube](https://youtube.com/@SadraShameli) and [Linkedin](https://linkedin.com/in/sadrashameli)
 
