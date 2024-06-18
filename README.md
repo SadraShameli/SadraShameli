@@ -1,32 +1,24 @@
-I'm Sadra Shameli. 20 years old full-stack & IoT developer based in Rotterdam, The Netherlands.
+Hi, my name is Sadra.
 
-<p align="center">
-   <a href="https://www.youtube.com/@SadraShameli" target="_blank" style="text-decoration:none;">
-      <img src="Assets/youtube.svg" alt="YouTube" width="32" align="center">
-   </a>      
-   <a href="https://www.linkedin.com/in/sadrashameli" target="_blank" style="text-decoration:none;">
-      <img src="Assets/linkedin.svg" alt="Linkedin" width="32" align="center">
-   </a>   
-   <a href="mailto:sadra.shameli1@gmail.com" target="_blank" style="text-decoration:none;">
-      <img src="Assets/gmail.svg" alt="Gmail" width="32" align="center">
-   </a>   
-</p>
+I'm a full-stack & IoT developer based in Rijswijk, The Netherlands. I have always been passionate about building cool robots and apps.
+
+Checkout my [Website](https://sadra.nl), [YouTube](https://youtube.com/@SadraShameli) and [Linkedin](https://linkedin.com/in/sadrashameli)
 
 ---
 
 ### 👨‍💻 What I do
 
-- **I’m currently working on**
+- **I’m working on**
   - [**sadra.nl**](https://sadra.nl) - My personal portfolio
   - [**Resume**](https://github.com/SadraShameli/Resume) - Resume generator
   - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce store
   - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
-  - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
+  - [**SpotDL**](https://github.com/SadraShameli/spotdl) - Python script for downloading Spotify songs
 - **Documents**
   - [**Curriculum Vitae**](Documents/CV.pdf "Curriculum Vitae")
   - [**Letter of Recommendation**](Documents/Letter%20of%20Recommendation.pdf "Letter of Recommendation")
-  - [**Profielwerkstuk**](Documents/PWS%20-%20Artificial%20Intelligence.pdf "PWS - Artificial Intelligence") - Research document for Project A.I.
-- **Fun fact** - My name is always mistaken with 'Sandra'.
+  - [**Profielwerkstuk**](Documents/PWS%20-%20Artificial%20Intelligence.pdf "PWS - Artificial Intelligence") - Research for Project A.I.
+- **Fun fact** - My name is always mistaken with **Sandra**.
 
 ---
 
@@ -45,16 +37,31 @@ These are my favorite tech stack for building all kinds of stuff.
 
 ### 🌐 My Projects
 
-<br />
+<details open>
+  <summary><b>sadra.nl</b></summary>
+  <img src="Images/SadraNL1.jpg" />
+  <img src="Images/SadraNL2.jpg" />
+</details>
 
-![Sadra.nl](Images/SadraNL.png "Sadra.nl")
+<br>
 
-![ProjectAI](Images/ProjectAI.jpg "ProjectAI")
+<details open>
+  <summary><b>Project A.I.</b></summary>
+  <img src="Images/ProjectAI.jpg" />
+</details>
 
-![Units](Images/Units.jpg "Units")
+<br>
 
-![Units2](Images/Units2.jpg "Units2")
+<details open>
+  <summary><b>Sensor Hub</b></summary>
+  <img src="Images/SensorHub1.jpg" />
+  <img src="Images/SensorHub2.jpg" />
+  <img src="Images/SensorHub3.jpg" />
+</details>
 
-![Units3](Images/Units3.jpg "Units3")
+<br>
 
-![Robot](Images/Robot.jpg "Robot")
+<details open>
+  <summary><b>Robot</b></summary>
+  <img src="Images/Robot.jpg" />
+</details>
