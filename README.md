@@ -17,9 +17,10 @@ I'm Sadra Shameli. 20 years old full-stack & IoT developer based in Rotterdam, T
 ### 👨‍💻 What I do
 
 - **I’m currently working on**
-  - [**sadra.nl**](https://sadra.nl) - My personal website and resume
+  - [**sadra.nl**](https://sadra.nl) - My personal portfolio
   - [**Resume**](https://github.com/SadraShameli/Resume) - Resume generator
   - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce store
+  - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
   - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
 - **Documents**
   - [**Curriculum Vitae**](Documents/CV.pdf "Curriculum Vitae")
@@ -45,6 +46,8 @@ These are my favorite tech stack for building all kinds of stuff.
 ### 🌐 My Projects
 
 <br />
+
+![Sadra.nl](Images/SadraNL.png "Sadra.nl")
 
 ![ProjectAI](Images/ProjectAI.jpg "ProjectAI")
 
