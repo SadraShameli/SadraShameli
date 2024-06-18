@@ -8,10 +8,12 @@ Checkout my [Website](https://sadra.nl), [YouTube](https://youtube.com/@SadraSha
 
 ### 👨‍💻 What I do
 
-- **I’m working on**
+- **Recent Projects**
   - [**sadra.nl**](https://sadra.nl) - My personal portfolio
   - [**Resume**](https://github.com/SadraShameli/Resume) - Resume generator
   - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce store
+  - [**SensorHub Firmware**](https://github.com/SadraShameli/SensorHub-Firmware) - Firmware of the devices that communicate to [sadra.nl](https://sadra.nl)
+  - [**SensorHub Backend**](https://github.com/SadraShameli/SensorHub-Backend) - Backend for [sadra.nl](https://sadra.nl), ported to Django
   - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
   - [**SpotDL**](https://github.com/SadraShameli/spotdl) - Python script for downloading Spotify songs
 - **Documents**
