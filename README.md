@@ -14,7 +14,7 @@ Checkout my [Website](https://sadra.nl), [YouTube](https://youtube.com/@SadraSha
   - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce store
   - [**SensorHub**](https://github.com/SadraShameli/SensorHub) - Devices that communicate to [sadra.nl](https://sadra.nl)
   - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
-  - [**SpotDL**](https://github.com/SadraShameli/spotdl) - Python script for downloading Spotify songs
+  - [**yts-dl**](https://github.com/SadraShameli/yts-dl) - Python script for downloading from Youtube & Spotify
 - **Documents**
   - [**Curriculum Vitae**](Documents/CV.pdf "Curriculum Vitae")
   - [**Letter of Recommendation**](Documents/Letter%20of%20Recommendation.pdf "Letter of Recommendation")
