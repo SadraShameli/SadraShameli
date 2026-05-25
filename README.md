@@ -10,13 +10,10 @@ Checkout my [Website](https://sadra.nl), [YouTube](https://youtube.com/@SadraSha
 
 - **Recent Projects**
   - [**sadra.nl**](https://github.com/SadraShameli/sadra.nl) - My personal portfolio
-  - [**Resume**](https://github.com/SadraShameli/Resume) - Resume generator
-  - [**Partify**](https://github.com/SadraShameli/Partify) - Online e-commerce store
+  - [**minomarkt.nl**](https://github.com/SadraShameli/minomarkt.nl) - Online shop
   - [**SensorHub**](https://github.com/SadraShameli/SensorHub) - Devices that communicate to [sadra.nl](https://sadra.nl)
   - [**ProjectAI**](https://github.com/SadraShameli/ProjectAI) - Autonomous self-driving robot based on camera vision and lidar
-  - [**yts-dl**](https://github.com/SadraShameli/yts-dl) - Python package for downloading from Youtube & Spotify
 - **Documents**
-  - [**Curriculum Vitae**](Documents/CV.pdf "Curriculum Vitae")
   - [**Letter of Recommendation**](Documents/Letter%20of%20Recommendation.pdf "Letter of Recommendation")
   - [**Profielwerkstuk**](Documents/PWS%20-%20Artificial%20Intelligence.pdf "PWS - Artificial Intelligence") - Research for Project A.I.
 - **Fun fact** - My name is always mistaken with **Sandra**.
