@@ -18,8 +18,8 @@
 
 <p>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/intro-dark.cf662e7d.svg">
-  <img align="top" alt="Hey, I'm Sadra, not Sandra. I like owning things end to end: C++ firmware on an ESP32, a tRPC and Postgres backend, the Next.js dashboard that plots it all, and the CI that keeps both honest. By day I'm a full-stack developer at Nobears in Rotterdam, shipping and maintaining 15+ WordPress platforms. By night I trade NQ futures and I'm teaching a Python engine to trade them with me." src="Assets/Readme/intro-light.ccfef6d6.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/intro-dark.dc04df8e.svg">
+  <img align="top" alt="Hey, I'm Sadra, not Sandra. I like owning things end to end: C++ firmware on an ESP32, a tRPC and Postgres backend, the Next.js dashboard that plots it all, and the CI that keeps both honest. By day I'm a full-stack developer at Nobears in Rotterdam, shipping and maintaining 15+ WordPress platforms. By night I trade NQ futures and I'm teaching a Python engine to trade them with me." src="Assets/Readme/intro-light.76f34285.svg" width="100%">
 </picture>
 </p>
 

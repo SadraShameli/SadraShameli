@@ -14,9 +14,10 @@ PIPELINE = [
     ("ci", "keeps both honest"),
 ]
 
-# fixed palettes: the day panel is always light and the night panel always dark
-DAY = {"bg": "#fafaf9", "border": "#e7e5e4", "label": "#78716c", "title": "#1c1917", "body": "#57534e", "sun": "#eab308"}
-NIGHT = {"bg": "#09090b", "border": "#27272a", "label": "#a1a1aa", "title": "#fafafa", "body": "#a1a1aa", "moon": "#e4e4e7"}
+
+def _palette(t: Theme) -> dict:
+    """Both panels follow the page theme; only the sun and moon tell day from night."""
+    return {"bg": t.panel, "border": t.border, "label": t.muted, "title": t.text, "body": t.muted}
 
 
 def _pipeline(t: Theme, y: float) -> tuple[str, str]:
@@ -70,28 +71,28 @@ def _panel(
     return "".join(out)
 
 
-def _sun(cx: float, cy: float) -> str:
+def _sun(t: Theme, cx: float, cy: float) -> str:
     rays = "".join(
-        f'<line x1="{cx}" y1="{cy - 21}" x2="{cx}" y2="{cy - 27}" stroke="{DAY["sun"]}" stroke-width="2.5" '
+        f'<line x1="{cx}" y1="{cy - 21}" x2="{cx}" y2="{cy - 27}" stroke="{t.yellow}" stroke-width="2.5" '
         f'stroke-linecap="round" transform="rotate({a} {cx} {cy})"/>'
         for a in range(0, 360, 45)
     )
     return (
         f'<g id="sun" style="transform-origin:{cx}px {cy}px">{rays}</g>'
-        f'<circle cx="{cx}" cy="{cy}" r="14" fill="{DAY["sun"]}"/>'
+        f'<circle cx="{cx}" cy="{cy}" r="14" fill="{t.yellow}"/>'
     )
 
 
-def _moon(cx: float, cy: float, bg: str) -> str:
+def _moon(t: Theme, cx: float, cy: float) -> str:
     stars = [(-26, -18, 0.0), (24, -24, 0.7), (30, 14, 1.4), (-22, 22, 2.1)]
     star_svg = "".join(
-        f'<circle class="tw" cx="{cx + dx}" cy="{cy + dy}" r="1.6" fill="{NIGHT["moon"]}" '
+        f'<circle class="tw" cx="{cx + dx}" cy="{cy + dy}" r="1.6" fill="{t.muted}" '
         f'style="animation-delay:{d}s"/>'
         for dx, dy, d in stars
     )
     return (
-        f'<circle cx="{cx}" cy="{cy}" r="15" fill="{NIGHT["moon"]}"/>'
-        f'<circle cx="{cx + 7}" cy="{cy - 5}" r="13" fill="{bg}"/>' + star_svg
+        f'<circle cx="{cx}" cy="{cy}" r="15" fill="{t.text}"/>'
+        f'<circle cx="{cx + 7}" cy="{cy - 5}" r="13" fill="{t.panel}"/>' + star_svg
     )
 
 
@@ -116,13 +117,14 @@ def intro(t: Theme) -> str:
     py, ph, gap = 190, 124, 16
     pw = (W - 64 - gap) / 2
     dx, nx = 32, 32 + pw + gap
+    pal = _palette(t)
     day = _panel(
-        dx, py, pw, ph, DAY, "BY DAY", "Full-stack developer at Nobears",
-        "Rotterdam. I ship and maintain 15+ WordPress platforms.", _sun(dx + 44, py + ph / 2),
+        dx, py, pw, ph, pal, "BY DAY", "Full-stack developer at Nobears",
+        "Rotterdam. I ship and maintain 15+ WordPress platforms.", _sun(t, dx + 44, py + ph / 2),
     )
     night = _panel(
-        nx, py, pw, ph, NIGHT, "BY NIGHT", "Trading NQ futures",
-        "and teaching a Python engine to trade them with me.", _moon(nx + 44, py + ph / 2, NIGHT["bg"]),
+        nx, py, pw, ph, pal, "BY NIGHT", "Trading NQ futures",
+        "and teaching a Python engine to trade them with me.", _moon(t, nx + 44, py + ph / 2),
         reserve_right=170,
     ) + _candles(nx + pw - 146, py + 20, ph - 40)
 
