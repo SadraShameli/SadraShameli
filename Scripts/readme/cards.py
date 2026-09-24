@@ -39,7 +39,7 @@ class Project:
 
 
 @lru_cache(maxsize=None)
-def _img(name: str) -> str:
+def embed_jpeg(name: str) -> str:
     data = (ROOT / "Images" / "Cards" / f"{name}.jpg").read_bytes()
     return "data:image/jpeg;base64," + base64.b64encode(data).decode()
 
@@ -195,7 +195,7 @@ def featured(t: Theme, p: Project, visual: str) -> str:
         css.append(vcss)
     else:
         body.append(
-            f'<image href="{_img(p.image)}" x="0" y="0" width="{PW}" height="{H}" preserveAspectRatio="xMidYMid slice"/>'
+            f'<image href="{embed_jpeg(p.image)}" x="0" y="0" width="{PW}" height="{H}" preserveAspectRatio="xMidYMid slice"/>'
         )
         if visual == "lidar":
             svg, vcss = _lidar(t, 189, 130)
@@ -248,13 +248,13 @@ def tile(t: Theme, p: Project) -> str:
         half = W / len(p.images)
         for i, name in enumerate(p.images):
             body.append(
-                f'<image href="{_img(name)}" x="{i * half:.1f}" y="0" width="{half:.1f}" height="{IMG_H}" '
+                f'<image href="{embed_jpeg(name)}" x="{i * half:.1f}" y="0" width="{half:.1f}" height="{IMG_H}" '
                 'preserveAspectRatio="xMidYMid slice"/>'
             )
         body.append(f'<line x1="{half:.1f}" y1="0" x2="{half:.1f}" y2="{IMG_H}" stroke="{t.bg}" stroke-width="3"/>')
     else:
         body.append(
-            f'<image href="{_img(p.image)}" x="0" y="0" width="{W}" height="{IMG_H}" preserveAspectRatio="xMidYMid slice"/>'
+            f'<image href="{embed_jpeg(p.image)}" x="0" y="0" width="{W}" height="{IMG_H}" preserveAspectRatio="xMidYMid slice"/>'
         )
     body.append(f'<line x1="0" y1="{IMG_H}" x2="{W}" y2="{IMG_H}" stroke="{t.border}"/>')
     x, right = 28, W - 28

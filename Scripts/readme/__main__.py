@@ -20,10 +20,19 @@ def build_static(out: Path) -> None:
     from footer import footer
     from hero import hero
     from stack import stack
+    from terminal import documents, youtube
 
     out.mkdir(parents=True, exist_ok=True)
     for t in THEMES:
-        files = {"hero": hero(t), "about": about(t), "stack": stack(t), "footer": footer(t), **all_cards(t)}
+        files = {
+            "hero": hero(t),
+            "about": about(t),
+            "stack": stack(t),
+            "youtube": youtube(t),
+            "documents": documents(t),
+            "footer": footer(t),
+            **all_cards(t),
+        }
         for name, svg in files.items():
             (out / f"{name}-{t.name}.svg").write_text(svg, encoding="utf-8")
 

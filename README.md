@@ -43,6 +43,9 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
     <img alt="SensorHub: ESP32 sensor units I design, 3D-print and program. They report climate and loudness to sadra.nl." src="Assets/Readme/project-sensorhub-light.svg" width="100%">
   </picture>
 </a>
+<p align="right">
+  <a href="https://github.com/SadraShameli/sensorhub/blob/main/Assets/3D%20Models/Sensor%20Unit/Casing%20body.stl"><kbd> 🧊 Spin the SensorHub enclosure in 3D ↗ </kbd></a>
+</p>
 
 <a href="Documents/Resume%20-%20Sadra%202.pdf">
   <picture>
@@ -67,8 +70,6 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
   <a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-lab-dark.svg"><img alt="The early lab: an Arduino Mega robot on a custom PCB and a 3D-printed social robot" src="Assets/Readme/tile-lab-light.svg" width="49%"></picture></a>
 </p>
 
-<sub>🔒 TradingBot is private because it trades real money. Happy to walk you through the architecture on a call. · 🧊 Want to hold a SensorHub? <a href="https://github.com/SadraShameli/sensorhub/blob/main/Assets/3D%20Models/Sensor%20Unit/Casing%20body.stl">Spin its enclosure in 3D</a>.</sub>
-
 ## 🧰 Stack
 
 <picture>
@@ -78,13 +79,19 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
 
 ## 🎬 On YouTube
 
-<table>
-  <tr>
-    <td width="33%"><a href="https://www.youtube.com/watch?v=1142rRZ3rzc"><img src="https://i.ytimg.com/vi/1142rRZ3rzc/hqdefault.jpg" alt="Line detection for A.I. based on contrast difference" width="100%"></a><br><sub><b>Line detection</b> for Project A.I., based on contrast difference</sub></td>
-    <td width="33%"><a href="https://www.youtube.com/watch?v=_C8PnLK2SWA"><img src="https://i.ytimg.com/vi/_C8PnLK2SWA/hqdefault.jpg" alt="Range detection for A.I. based on lidar" width="100%"></a><br><sub><b>Range detection</b> with lidar, so the robot knows what's in front of it</sub></td>
-    <td width="33%"><a href="https://www.youtube.com/shorts/abyVlfAETG0"><img src="https://i.ytimg.com/vi/abyVlfAETG0/hqdefault.jpg" alt="Testing my self driving robot indoors" width="100%"></a><br><sub><b>First indoor test drive</b>, fully autonomous</sub></td>
-  </tr>
-</table>
+<a href="https://youtube.com/@SadraShameli">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/youtube-dark.svg">
+    <img alt="Terminal listing my top YouTube videos: line detection for A.I. (2.7k+ views), range detection with lidar (1.1k+ views) and my self-driving robot's first indoor test (500+ views)" src="Assets/Readme/youtube-light.svg" width="100%">
+  </picture>
+</a>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=1142rRZ3rzc"><kbd> ▶ Line detection </kbd></a>&nbsp;
+  <a href="https://www.youtube.com/watch?v=_C8PnLK2SWA"><kbd> ▶ Lidar ranging </kbd></a>&nbsp;
+  <a href="https://www.youtube.com/shorts/abyVlfAETG0"><kbd> ▶ Indoor test drive </kbd></a>&nbsp;
+  <a href="https://youtube.com/@SadraShameli"><kbd> ↗ Channel </kbd></a>
+</p>
 
 <details>
 <summary><b>👔 I'm hiring. Give me the 30-second version.</b></summary>
@@ -141,10 +148,19 @@ Wrong profile, but honestly, I get that a lot. Good luck finding her. 💛
 
 ## 📄 Paper trail
 
-- 📄 [**Resume, full-stack**](Documents/Resume%20-%20Sadra.pdf): web, CMS and IoT work, 2021 to now
-- 📈 [**Resume, quant**](Documents/Resume%20-%20Sadra%202.pdf): the trading and TradingBot angle
-- ✉️ [**Letter of recommendation**](Documents/Letter%20of%20Recommendation.pdf): in someone else's words
-- 🎓 [**Profielwerkstuk: Artificial Intelligence**](Documents/PWS%20-%20Artificial%20Intelligence.pdf): my 95-page school thesis (in Dutch) behind Project A.I., covering languages, compilers, TensorFlow, Raspberry Pi and ESP32
+<a href="Documents">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/documents-dark.svg">
+    <img alt="Terminal listing my documents: letter of recommendation, a 95-page A.I. thesis in Dutch, and my quant and full-stack resumes" src="Assets/Readme/documents-light.svg" width="100%">
+  </picture>
+</a>
+
+<p align="center">
+  <a href="Documents/Resume%20-%20Sadra.pdf"><kbd> Resume · full-stack </kbd></a>&nbsp;
+  <a href="Documents/Resume%20-%20Sadra%202.pdf"><kbd> Resume · quant </kbd></a>&nbsp;
+  <a href="Documents/Letter%20of%20Recommendation.pdf"><kbd> Letter of recommendation </kbd></a>&nbsp;
+  <a href="Documents/PWS%20-%20Artificial%20Intelligence.pdf"><kbd> A.I. thesis (PWS) </kbd></a>
+</p>
 
 <br>
 

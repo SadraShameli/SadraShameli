@@ -23,6 +23,10 @@ JOBS = {
     "minomarkt-nl": ("Images/Screenshots/minomarkt-nl.jpg", 490, 250, 0.5, 0.25),
     "robot": ("Images/Robot.jpg", 245, 250, 0.5, 0.5),
     "socialrobot": ("Images/SocialRobot.jpg", 245, 250, 0.45, 0.5),
+    # YouTube thumbnails: the videos are vertical, so keep the 9:16 middle
+    "yt-line-detection": ("Images/YouTube/1142rRZ3rzc.jpg", 126, 224, 0.5, 0.5),
+    "yt-lidar-ranging": ("Images/YouTube/_C8PnLK2SWA.jpg", 126, 224, 0.5, 0.5),
+    "yt-indoor-test": ("Images/YouTube/abyVlfAETG0.jpg", 126, 224, 0.5, 0.5),
 }
 
 
