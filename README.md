@@ -69,6 +69,23 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
 
 <sub>🔒 TradingBot is private because it trades real money. Happy to walk you through the architecture on a call. · 🧊 Want to hold a SensorHub? <a href="https://github.com/SadraShameli/sensorhub/blob/main/Assets/3D%20Models/Sensor%20Unit/Casing%20body.stl">Spin its enclosure in 3D</a>.</sub>
 
+## 🧰 Stack
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/stack-dark.svg">
+  <img alt="Tech stack. Web: TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, tRPC, TanStack Query, Zod, Better Auth. Backend: PHP, WordPress, WooCommerce, Twig, .NET, Node.js, Bun. Data: PostgreSQL, Drizzle, MySQL, Redis. Firmware: C++, ESP-IDF, FreeRTOS, Arduino, PlatformIO. Quant and ML: Python, PyTorch, NumPy, Pandas, Pydantic, TensorFlow. Shipping: Docker, GitHub Actions, Vercel, Sentry, Vitest, Playwright, Git. Making: Fusion 360, Blender, PrusaSlicer, Prusa MK3S+, Prusa Mini+, Vertex K8400." src="Assets/Readme/stack-light.svg" width="100%">
+</picture>
+
+## 🎬 On YouTube
+
+<table>
+  <tr>
+    <td width="33%"><a href="https://www.youtube.com/watch?v=1142rRZ3rzc"><img src="https://i.ytimg.com/vi/1142rRZ3rzc/hqdefault.jpg" alt="Line detection for A.I. based on contrast difference" width="100%"></a><br><sub><b>Line detection</b> for Project A.I., based on contrast difference</sub></td>
+    <td width="33%"><a href="https://www.youtube.com/watch?v=_C8PnLK2SWA"><img src="https://i.ytimg.com/vi/_C8PnLK2SWA/hqdefault.jpg" alt="Range detection for A.I. based on lidar" width="100%"></a><br><sub><b>Range detection</b> with lidar, so the robot knows what's in front of it</sub></td>
+    <td width="33%"><a href="https://www.youtube.com/shorts/abyVlfAETG0"><img src="https://i.ytimg.com/vi/abyVlfAETG0/hqdefault.jpg" alt="Testing my self driving robot indoors" width="100%"></a><br><sub><b>First indoor test drive</b>, fully autonomous</sub></td>
+  </tr>
+</table>
+
 <details>
 <summary><b>👔 I'm hiring. Give me the 30-second version.</b></summary>
 <br>
@@ -121,23 +138,6 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
 Wrong profile, but honestly, I get that a lot. Good luck finding her. 💛
 
 </details>
-
-## 🧰 Stack
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/stack-dark.svg">
-  <img alt="Tech stack. Web: TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, tRPC, TanStack Query, Zod, Better Auth. Backend: PHP, WordPress, WooCommerce, Twig, .NET, Node.js, Bun. Data: PostgreSQL, Drizzle, MySQL, Redis. Firmware: C++, ESP-IDF, FreeRTOS, Arduino, PlatformIO. Quant and ML: Python, PyTorch, NumPy, Pandas, Pydantic, TensorFlow. Shipping: Docker, GitHub Actions, Vercel, Sentry, Vitest, Playwright, Git. Making: Fusion 360, Blender, PrusaSlicer, Prusa MK3S+, Prusa Mini+, Vertex K8400." src="Assets/Readme/stack-light.svg" width="100%">
-</picture>
-
-## 🎬 On YouTube
-
-<table>
-  <tr>
-    <td width="33%"><a href="https://www.youtube.com/watch?v=1142rRZ3rzc"><img src="https://i.ytimg.com/vi/1142rRZ3rzc/hqdefault.jpg" alt="Line detection for A.I. based on contrast difference" width="100%"></a><br><sub><b>Line detection</b> for Project A.I., based on contrast difference</sub></td>
-    <td width="33%"><a href="https://www.youtube.com/watch?v=_C8PnLK2SWA"><img src="https://i.ytimg.com/vi/_C8PnLK2SWA/hqdefault.jpg" alt="Range detection for A.I. based on lidar" width="100%"></a><br><sub><b>Range detection</b> with lidar, so the robot knows what's in front of it</sub></td>
-    <td width="33%"><a href="https://www.youtube.com/shorts/abyVlfAETG0"><img src="https://i.ytimg.com/vi/abyVlfAETG0/hqdefault.jpg" alt="Testing my self driving robot indoors" width="100%"></a><br><sub><b>First indoor test drive</b>, fully autonomous</sub></td>
-  </tr>
-</table>
 
 ## 📄 Paper trail
 
