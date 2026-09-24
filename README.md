@@ -35,6 +35,40 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
   <img alt="neofetch-style card: full-stack developer at Nobears, 4+ years shipping production code, TypeScript, Python, C++, PHP, SQL" src="Assets/Readme/about-light.svg" width="100%">
 </picture>
 
+## 🛠️ Things I've built
+
+<a href="https://github.com/SadraShameli/sensorhub">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-sensorhub-dark.svg">
+    <img alt="SensorHub: ESP32 sensor units I design, 3D-print and program. They report climate and loudness to sadra.nl." src="Assets/Readme/project-sensorhub-light.svg" width="100%">
+  </picture>
+</a>
+
+<a href="Documents/Resume%20-%20Sadra%202.pdf">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-tradingbot-dark.svg">
+    <img alt="TradingBot: the modular quant framework I trade my own capital with. Private repository." src="Assets/Readme/project-tradingbot-light.svg" width="100%">
+  </picture>
+</a>
+
+<a href="https://github.com/SadraShameli/ProjectAI">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-projectai-dark.svg">
+    <img alt="Project A.I.: a self-driving robot car with on-device TensorFlow inference, lidar and a 3D-printed chassis" src="Assets/Readme/project-projectai-light.svg" width="100%">
+  </picture>
+</a>
+
+<p>
+  <a href="https://sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-sadra-nl-dark.svg"><img alt="sadra.nl: portfolio, live SensorHub dashboard, trading journal and more" src="Assets/Readme/tile-sadra-nl-light.svg" width="49%"></picture></a>
+  <a href="https://sadra.nl/prop-calculator"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-prop-calculator-dark.svg"><img alt="Prop Calculator: Monte Carlo simulation against each futures prop firm's rules" src="Assets/Readme/tile-prop-calculator-light.svg" width="49%"></picture></a>
+</p>
+<p>
+  <a href="https://minomarkt.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-minomarkt-dark.svg"><img alt="Mino Markt: WooCommerce storefront for a Persian market and grill in Alkmaar" src="Assets/Readme/tile-minomarkt-light.svg" width="49%"></picture></a>
+  <a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-lab-dark.svg"><img alt="The early lab: an Arduino Mega robot on a custom PCB and a 3D-printed social robot" src="Assets/Readme/tile-lab-light.svg" width="49%"></picture></a>
+</p>
+
+<sub>🔒 TradingBot is private because it trades real money. Happy to walk you through the architecture on a call. · 🧊 Want to hold a SensorHub? <a href="https://github.com/SadraShameli/sensorhub/blob/main/Assets/3D%20Models/Sensor%20Unit/Casing%20body.stl">Spin its enclosure in 3D</a>.</sub>
+
 <details>
 <summary><b>👔 I'm hiring. Give me the 30-second version.</b></summary>
 <br>
@@ -87,40 +121,6 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
 Wrong profile, but honestly, I get that a lot. Good luck finding her. 💛
 
 </details>
-
-## 🛠️ Things I've built
-
-<a href="https://github.com/SadraShameli/sensorhub">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-sensorhub-dark.svg">
-    <img alt="SensorHub: ESP32 sensor units I design, 3D-print and program. They report climate and loudness to sadra.nl." src="Assets/Readme/project-sensorhub-light.svg" width="100%">
-  </picture>
-</a>
-
-<a href="Documents/Resume%20-%20Sadra%202.pdf">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-tradingbot-dark.svg">
-    <img alt="TradingBot: the modular quant framework I trade my own capital with. Private repository." src="Assets/Readme/project-tradingbot-light.svg" width="100%">
-  </picture>
-</a>
-
-<a href="https://github.com/SadraShameli/ProjectAI">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-projectai-dark.svg">
-    <img alt="Project A.I.: a self-driving robot car with on-device TensorFlow inference, lidar and a 3D-printed chassis" src="Assets/Readme/project-projectai-light.svg" width="100%">
-  </picture>
-</a>
-
-<p>
-  <a href="https://sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-sadra-nl-dark.svg"><img alt="sadra.nl: portfolio, live SensorHub dashboard, trading journal and more" src="Assets/Readme/tile-sadra-nl-light.svg" width="49%"></picture></a>
-  <a href="https://sadra.nl/prop-calculator"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-prop-calculator-dark.svg"><img alt="Prop Calculator: Monte Carlo simulation against each futures prop firm's rules" src="Assets/Readme/tile-prop-calculator-light.svg" width="49%"></picture></a>
-</p>
-<p>
-  <a href="https://minomarkt.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-minomarkt-dark.svg"><img alt="Mino Markt: WooCommerce storefront for a Persian market and grill in Alkmaar" src="Assets/Readme/tile-minomarkt-light.svg" width="49%"></picture></a>
-  <a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-lab-dark.svg"><img alt="The early lab: an Arduino Mega robot on a custom PCB and a 3D-printed social robot" src="Assets/Readme/tile-lab-light.svg" width="49%"></picture></a>
-</p>
-
-<sub>🔒 TradingBot is private because it trades real money. Happy to walk you through the architecture on a call. · 🧊 Want to hold a SensorHub? <a href="https://github.com/SadraShameli/sensorhub/blob/main/Assets/3D%20Models/Sensor%20Unit/Casing%20body.stl">Spin its enclosure in 3D</a>.</sub>
 
 ## 🧰 Stack
 
