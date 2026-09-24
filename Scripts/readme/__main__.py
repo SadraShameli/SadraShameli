@@ -19,6 +19,7 @@ def build_static(out: Path) -> None:
     from cards import all_cards
     from footer import footer
     from hero import hero
+    from intro import intro
     from stack import stack
     from terminal import documents, paths, youtube
 
@@ -26,6 +27,7 @@ def build_static(out: Path) -> None:
     for t in THEMES:
         files = {
             "hero": hero(t),
+            "intro": intro(t),
             "about": about(t),
             "stack": stack(t),
             "youtube": youtube(t),

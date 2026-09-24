@@ -53,6 +53,18 @@ class Terminal:
                 )
         return start + len(text) * step
 
+    def command(self, x: float, y: float, cwd: str, command: str, comment: str | None = None) -> float:
+        """Prompt + typed command, then an optional `# comment`; returns when it's all shown."""
+        cx = self.prompt(x, y, cwd)
+        done = self.type(cx, y, command, 0.35)
+        if comment:
+            done += 0.15
+            self.body.append(
+                f'<text x="{cx + (len(command) + 2) * self.cw:.1f}" y="{y}" fill="{self.t.green}" '
+                f'class="{self.appear(done, 0.3)}"># {esc(comment)}</text>'
+            )
+        return done
+
     def cursor(self, x: float, y: float, delay: float) -> None:
         fs, cw = self.fs, self.cw
         self.body.append(
@@ -290,11 +302,10 @@ def _runs_svg(t: Theme, words: list[tuple[str, str]]) -> str:
     return "".join(out)
 
 
-def notes(t: Theme, command: str, bullets: list[Bullet], desc: str) -> str:
+def notes(t: Theme, command: str, comment: str, bullets: list[Bullet], desc: str) -> str:
     W, x0, cmd_y, lh = 1000, 36, 84, 23
     term = Terminal(t, W, "sadra@rijswijk: ~")
-    cx = term.prompt(x0, cmd_y, "~")
-    done = term.type(cx, cmd_y, command, 0.35)
+    done = term.command(x0, cmd_y, "~", command, comment)
     width = int((W - 2 * x0) / term.cw) - 2  # minus the "- " gutter
     y = cmd_y + 36
     delay = done + 0.25
@@ -352,8 +363,7 @@ def _json_svg(t: Theme, text: str) -> str:
 def robot(t: Theme) -> str:
     W, x0, cmd_y, lh = 1000, 36, 84, 23
     term = Terminal(t, W, "sadra@rijswijk: ~")
-    cx = term.prompt(x0, cmd_y, "~")
-    done = term.type(cx, cmd_y, "cat sadra.json | jq", 0.35)
+    done = term.command(x0, cmd_y, "~", "cat sadra.json | jq", "robot? machine-readable me")
     y = cmd_y + 36
     delay = done + 0.25
     for pad, line in _json_lines(ME):
@@ -372,8 +382,7 @@ def robot(t: Theme) -> str:
 def sandra(t: Theme) -> str:
     W, x0, cmd_y = 1000, 36, 84
     term = Terminal(t, W, "sadra@rijswijk: ~")
-    cx = term.prompt(x0, cmd_y, "~")
-    done = term.type(cx, cmd_y, "whois sandra", 0.35)
+    done = term.command(x0, cmd_y, "~", "whois sandra", "looking for sandra?")
     lines = [
         (f'<tspan fill="{t.text}">No match for "SANDRA".</tspan>', 0.3),
         (f'<tspan fill="{t.green}"># wrong profile, but honestly, I get that a lot. good luck finding her &lt;3</tspan>', 0.5),
@@ -392,8 +401,14 @@ def sandra(t: Theme) -> str:
 
 def paths(t: Theme) -> dict[str, str]:
     return {
-        "sh-hiring": notes(t, "cat hiring.md", HIRING, "The 30-second version for people who are hiring."),
-        "sh-developer": notes(t, "cat interesting-bits.md", DEVELOPER, "The interesting technical bits."),
+        "sh-hiring": notes(
+            t, "cat hiring.md", "hiring? the 30-second version", HIRING,
+            "The 30-second version for people who are hiring.",
+        ),
+        "sh-developer": notes(
+            t, "cat interesting-bits.md", "developer? the interesting bits", DEVELOPER,
+            "The interesting technical bits.",
+        ),
         "sh-robot": robot(t),
         "sh-sandra": sandra(t),
     }

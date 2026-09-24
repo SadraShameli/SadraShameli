@@ -26,16 +26,17 @@
   <a href="Documents/Resume%20-%20Sadra.pdf"><kbd> Resume.pdf </kbd></a>
 </p>
 
-Hey, I'm Sadra 👋 (yes, **Sadra**, not Sandra).
-
-I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard that plots what it measures, and the CI that keeps both honest. By day I'm a full-stack developer at [Nobears](https://www.nobears.com) in Rotterdam, where I ship and maintain 15+ WordPress platforms. The rest of the time I trade NQ futures, and I'm teaching a Python engine to do it with me.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/intro-dark.svg">
+  <img alt="Hey, I'm Sadra, not Sandra. I like owning things end to end: C++ firmware on an ESP32, a tRPC and Postgres backend, the Next.js dashboard that plots it all, and the CI that keeps both honest. By day I'm a full-stack developer at Nobears in Rotterdam, shipping and maintaining 15+ WordPress platforms. By night I trade NQ futures and I'm teaching a Python engine to trade them with me." src="Assets/Readme/intro-light.svg" width="100%">
+</picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/about-dark.svg">
   <img alt="neofetch-style card: full-stack developer at Nobears, 4+ years shipping production code, TypeScript, Python, C++, PHP, SQL" src="Assets/Readme/about-light.svg" width="100%">
 </picture>
 
-## 🛠️ Things I've built
+<br>
 
 <a href="https://github.com/SadraShameli/sensorhub">
   <picture>
@@ -70,14 +71,14 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
   <a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-lab-dark.svg"><img alt="The early lab: an Arduino Mega robot on a custom PCB and a 3D-printed social robot" src="Assets/Readme/tile-lab-light.svg" width="49%"></picture></a>
 </p>
 
-## 🧰 Stack
+<br>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/stack-dark.svg">
   <img alt="Tech stack. Web: TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, tRPC, TanStack Query, Zod, Better Auth. Backend: PHP, WordPress, WooCommerce, Twig, .NET, Node.js, Bun. Data: PostgreSQL, Drizzle, MySQL, Redis. Firmware: C++, ESP-IDF, FreeRTOS, Arduino, PlatformIO. Quant and ML: Python, PyTorch, NumPy, Pandas, Pydantic, TensorFlow. Shipping: Docker, GitHub Actions, Vercel, Sentry, Vitest, Playwright, Git. Making: Fusion 360, Blender, PrusaSlicer, Prusa MK3S+, Prusa Mini+, Vertex K8400." src="Assets/Readme/stack-light.svg" width="100%">
 </picture>
 
-## 🎬 On YouTube
+<br>
 
 <a href="https://youtube.com/@SadraShameli">
   <picture>
@@ -93,8 +94,6 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
   <a href="https://youtube.com/@SadraShameli"><kbd> ↗ Channel </kbd></a>
 </p>
 
-<details>
-<summary><b>👔 I'm hiring. Give me the 30-second version.</b></summary>
 <br>
 
 <a href="Documents/Resume%20-%20Sadra.pdf">
@@ -113,12 +112,6 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
   <a href="mailto:sadra.shameli1@gmail.com"><kbd> Email </kbd></a>
 </p>
 
-</details>
-
-<details>
-<summary><b>🧑‍💻 I'm a developer. Show me the interesting bits.</b></summary>
-<br>
-
 <a href="https://github.com/SadraShameli/sensorhub">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-developer-dark.svg">
@@ -133,12 +126,6 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
   <a href="Scripts/readme"><kbd> Scripts/readme </kbd></a>
 </p>
 
-</details>
-
-<details>
-<summary><b>🤖 I'm a robot.</b></summary>
-<br>
-
 <a href="https://sadra.nl">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-robot-dark.svg">
@@ -152,20 +139,12 @@ I like owning things end to end: C++ firmware on an ESP32, the Next.js dashboard
   <a href="https://youtube.com/@SadraShameli"><kbd> YouTube </kbd></a>
 </p>
 
-</details>
-
-<details>
-<summary><b>🙋 I'm looking for Sandra.</b></summary>
-<br>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-sandra-dark.svg">
   <img alt="whois sandra: No match for SANDRA. Wrong profile, but honestly, I get that a lot. Good luck finding her." src="Assets/Readme/sh-sandra-light.svg" width="100%">
 </picture>
 
-</details>
-
-## 📄 Paper trail
+<br>
 
 <a href="Documents">
   <picture>

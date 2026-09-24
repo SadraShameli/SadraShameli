@@ -3,16 +3,17 @@
 Everything in [`Assets/Readme`](../../Assets/Readme) comes from here. Only the Python standard library is needed.
 
 ```sh
-python3 Scripts/readme static   # hero, neofetch, projects, stack, youtube, documents, footer -> Assets/Readme
+python3 Scripts/readme static   # every card -> Assets/Readme
 ```
 
 | File | What it draws |
 |---|---|
+| `intro.py` | the intro: the end-to-end pipeline and the by day / by night panels |
 | `hero.py` | the banner: the `whoami` typo gag and the isometric SensorHub with its firmware's LED pattern |
 | `about.py` | `neofetch`, but it's me |
 | `cards.py` | project cards and tiles (edit `FEATURED` / `TILES` to change the copy) |
 | `stack.py` | the tech stack chips (edit `STACK`) |
-| `terminal.py` | the terminals: YouTube, documents, and the four click-to-open sections (edit `HIRING`, `DEVELOPER`, `ME`) |
+| `terminal.py` | the terminals: YouTube, documents, and the hiring / developer / robot / Sandra ones (edit `HIRING`, `DEVELOPER`, `ME`) |
 | `footer.py` | the `exit` at the bottom |
 | `svg.py` | themes, embedded fonts, text measuring |
 | `prep_images.py` | one-off photo and thumbnail crops for the cards (needs Pillow) |
