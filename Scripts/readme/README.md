@@ -12,7 +12,7 @@ python3 Scripts/readme static   # hero, neofetch, projects, stack, youtube, docu
 | `about.py` | `neofetch`, but it's me |
 | `cards.py` | project cards and tiles (edit `FEATURED` / `TILES` to change the copy) |
 | `stack.py` | the tech stack chips (edit `STACK`) |
-| `terminal.py` | the `ls` terminals for YouTube and the documents |
+| `terminal.py` | the terminals: YouTube, documents, and the four click-to-open sections (edit `HIRING`, `DEVELOPER`, `ME`) |
 | `footer.py` | the `exit` at the bottom |
 | `svg.py` | themes, embedded fonts, text measuring |
 | `prep_images.py` | one-off photo and thumbnail crops for the cards (needs Pillow) |

@@ -20,7 +20,7 @@ def build_static(out: Path) -> None:
     from footer import footer
     from hero import hero
     from stack import stack
-    from terminal import documents, youtube
+    from terminal import documents, paths, youtube
 
     out.mkdir(parents=True, exist_ok=True)
     for t in THEMES:
@@ -31,6 +31,7 @@ def build_static(out: Path) -> None:
             "youtube": youtube(t),
             "documents": documents(t),
             "footer": footer(t),
+            **paths(t),
             **all_cards(t),
         }
         for name, svg in files.items():
