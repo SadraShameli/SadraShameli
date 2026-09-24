@@ -45,15 +45,101 @@ def embed_jpeg(name: str) -> str:
     return "data:image/jpeg;base64," + base64.b64encode(data).decode()
 
 
-def photo(t: Theme, name: str, x: float, y: float, w: float, h: float, clip: str | None = None) -> str:
-    """An embedded photo filling the box, under the same dark tint as every other photo."""
+GRAIN = {"dark": 0.2, "light": 0.14}
+
+
+def photo(
+    t: Theme,
+    name: str,
+    x: float,
+    y: float,
+    w: float,
+    h: float,
+    clip: str | None = None,
+    fade_to: str | None = None,
+    grain: bool = True,
+) -> str:
+    """An embedded photo with the house treatment: a dark tint so every photo sits at the same
+    level, film grain, and optionally a fade (a vignette when fading to black)."""
+    uid = f"{x:.0f}-{y:.0f}-{w:.0f}"
+    box = f'x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}"'
     clip_attr = f' clip-path="url(#{clip})"' if clip else ""
+    defs, parts = [], [
+        f'<image href="{embed_jpeg(name)}" {box} preserveAspectRatio="xMidYMid slice"{clip_attr}/>',
+        f'<rect {box} fill="#000" fill-opacity="{t.photo_dim}"{clip_attr}/>',
+    ]
+    if grain:
+        defs.append(
+            f'<filter id="gr{uid}" x="0" y="0" width="100%" height="100%">'
+            '<feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" stitchTiles="stitch"/>'
+            '<feColorMatrix type="saturate" values="0"/></filter>'
+        )
+        parts.append(
+            f'<rect {box} filter="url(#gr{uid})" opacity="{GRAIN[t.name]}" '
+            f'style="mix-blend-mode:overlay"{clip_attr}/>'
+        )
+    if fade_to:
+        defs.append(
+            f'<linearGradient id="fd{uid}" x1="0" y1="0" x2="0" y2="1">'
+            f'<stop offset=".55" stop-color="{fade_to}" stop-opacity="0"/>'
+            f'<stop offset="1" stop-color="{fade_to}" stop-opacity=".8"/></linearGradient>'
+        )
+        parts.append(f'<rect {box} fill="url(#fd{uid})"{clip_attr}/>')
+    return (f"<defs>{''.join(defs)}</defs>" if defs else "") + "".join(parts)
+
+
+def plus(x: float, y: float, color: str, size: float = 6, opacity: float = 0.8) -> str:
+    """The little + that marks grid intersections in Vercel's designs."""
     return (
-        f'<image href="{embed_jpeg(name)}" x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" '
-        f'preserveAspectRatio="xMidYMid slice"{clip_attr}/>'
-        f'<rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" fill="#000" '
-        f'fill-opacity="{t.photo_dim}"{clip_attr}/>'
+        f'<path d="M{x - size:.1f} {y:.1f}H{x + size:.1f}M{x:.1f} {y - size:.1f}V{y + size:.1f}" '
+        f'stroke="{color}" stroke-opacity="{opacity}" stroke-width="1.2"/>'
     )
+
+
+def corner_marks(x: float, y: float, w: float, h: float, corners: str = "tl tr bl br", inset: float = 16) -> str:
+    spots = {"tl": (x + inset, y + inset), "tr": (x + w - inset, y + inset),
+             "bl": (x + inset, y + h - inset), "br": (x + w - inset, y + h - inset)}
+    return "".join(plus(*spots[c], "#fff", opacity=0.65) for c in corners.split())
+
+
+def showcase(t: Theme, name: str, w: float, h: float) -> str:
+    """A website screenshot, Vercel-template style: inset in a frame on a guide grid,
+    under a soft spotlight, running off the bottom edge."""
+    sx, sy = 36, 30
+    sw = w - 2 * sx
+    sh = sw / 1.6
+    spot, spot_op = ("#fff", 0.1) if t.name == "dark" else ("#000", 0.05)
+    frame = ("#fff", 0.16) if t.name == "dark" else ("#000", 0.14)
+    parts = [
+        "<defs>"
+        f'<clipPath id="area"><rect width="{w}" height="{h}"/></clipPath>'
+        f'<clipPath id="shot"><rect x="{sx}" y="{sy}" width="{sw}" height="{sh + 20:.1f}" rx="10"/></clipPath>'
+        f'<pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse" x="{sx % 24}" y="{sy % 24}">'
+        f'<path d="M24 0H0V24" fill="none" stroke="{t.border}" stroke-width="1"/></pattern>'
+        f'<radialGradient id="gridfade" cx="50%" cy="20%" r="75%"><stop offset="0" stop-color="#fff"/>'
+        f'<stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>'
+        f'<mask id="gridmask"><rect width="{w}" height="{h}" fill="url(#gridfade)"/></mask>'
+        f'<radialGradient id="spot" cx="50%" cy="0%" r="70%"><stop offset="0" stop-color="{spot}" '
+        f'stop-opacity="{spot_op}"/><stop offset="1" stop-color="{spot}" stop-opacity="0"/></radialGradient>'
+        '<filter id="shadow" x="-20%" y="-20%" width="140%" height="160%"><feGaussianBlur stdDeviation="12"/></filter>'
+        "</defs>",
+        '<g clip-path="url(#area)">',
+        f'<rect width="{w}" height="{h}" fill="{t.panel}"/>',
+        f'<rect width="{w}" height="{h}" fill="url(#grid)" mask="url(#gridmask)" opacity=".7"/>',
+        f'<rect width="{w}" height="{h}" fill="url(#spot)"/>',
+        # guide lines the screenshot is aligned to
+        f'<path d="M{sx} 0V{h}M{sx + sw} 0V{h}M0 {sy}H{w}" stroke="{t.faint}" stroke-opacity=".5" '
+        f'stroke-dasharray="3 4"/>',
+        f'<rect x="{sx + 6}" y="{sy + 14}" width="{sw - 12}" height="{sh}" rx="10" fill="#000" '
+        f'fill-opacity=".45" filter="url(#shadow)"/>',
+        photo(t, name, sx, sy, sw, sh, clip="shot", grain=False),
+        f'<rect x="{sx + .5}" y="{sy + .5}" width="{sw - 1}" height="{sh + 20:.1f}" rx="10" fill="none" '
+        f'stroke="{frame[0]}" stroke-opacity="{frame[1]}"/>',
+        plus(sx, sy, t.muted),
+        plus(sx + sw, sy, t.muted),
+        "</g>",
+    ]
+    return "".join(parts)
 
 
 def wrap(text: str, kind: str, weight: int, size: float, max_w: float) -> list[str]:
@@ -220,7 +306,8 @@ def featured(t: Theme, p: Project, visual: str) -> str:
         body.append(svg)
         css.append(vcss)
     else:
-        body.append(photo(t, p.image, 0, 0, PW, H))
+        body.append(photo(t, p.image, 0, 0, PW, H, fade_to="#000"))
+        body.append(corner_marks(0, 0, PW, H, "tl tr"))
         if visual == "lidar":
             svg, vcss = _lidar(t, *(round(v) for v in _in_frame(*LIDAR_AT, PW, H)))
             body.append(f'<g clip-path="url(#photo)">{svg}</g>')
@@ -272,10 +359,11 @@ def tile(t: Theme, p: Project) -> str:
     if p.images:
         half = W / len(p.images)
         for i, name in enumerate(p.images):
-            body.append(photo(t, name, i * half, 0, half, IMG_H))
+            body.append(photo(t, name, i * half, 0, half, IMG_H, fade_to="#000"))
         body.append(f'<line x1="{half:.1f}" y1="0" x2="{half:.1f}" y2="{IMG_H}" stroke="{t.bg}" stroke-width="3"/>')
+        body.append(corner_marks(0, 0, W, IMG_H, "tl tr"))
     else:
-        body.append(photo(t, p.image, 0, 0, W, IMG_H))
+        body.append(showcase(t, p.image, W, IMG_H))
     body.append(f'<line x1="0" y1="{IMG_H}" x2="{W}" y2="{IMG_H}" stroke="{t.border}"/>')
     x, right = 28, W - 28
     body.append(f'<text x="{x}" y="{IMG_H + 38}" class="eb" font-size="11">{esc(p.eyebrow)}</text>')
@@ -360,7 +448,7 @@ TILES = [
         desc="My corner of the web. One auth, API and design system shared by a portfolio, the live "
         "SensorHub dashboard, a trading journal, a resume generator and more.",
         link="↗ sadra.nl",
-        image="sadra-nl",
+        image="shot-sadra-nl",
     ),
     Project(
         slug="prop-calculator",
@@ -370,7 +458,7 @@ TILES = [
         desc="Runs your trading system through a Monte Carlo against each prop firm's real drawdown, "
         "daily-loss and consistency rules to estimate pass odds, costs and payouts.",
         link="↗ sadra.nl/prop-calculator",
-        image="prop-calculator",
+        image="shot-prop-calculator",
     ),
     Project(
         slug="minomarkt",
@@ -380,7 +468,7 @@ TILES = [
         desc="Storefront for a Persian market & grill in Alkmaar: online ordering, in-store pickup, "
         "loyalty points, subscriptions and live store availability.",
         link="↗ minomarkt.nl",
-        image="minomarkt-nl",
+        image="shot-minomarkt-nl",
     ),
     Project(
         slug="lab",

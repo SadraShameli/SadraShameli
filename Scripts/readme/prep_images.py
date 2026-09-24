@@ -18,9 +18,10 @@ SCALE = 1.5  # retina-ish without bloating the SVGs
 JOBS = {
     "sensorhub": ("Images/SensorHub1.jpg", 400, 320, 0.5, 0.58),
     "projectai": ("Images/ProjectAI.jpg", 400, 320, 0.52, 0.55),
-    "sadra-nl": ("Images/Screenshots/sadra-nl.jpg", 490, 250, 0.5, 0.28),
-    "prop-calculator": ("Images/Screenshots/prop-calculator.jpg", 490, 250, 0.5, 0.0),
-    "minomarkt-nl": ("Images/Screenshots/minomarkt-nl.jpg", 490, 250, 0.5, 0.25),
+    # website screenshots, shown inset in a frame (16:10, the whole 1440x900 capture)
+    "shot-sadra-nl": ("Images/Screenshots/sadra-nl.jpg", 418, 261, 0.5, 0.0),
+    "shot-prop-calculator": ("Images/Screenshots/prop-calculator.jpg", 418, 261, 0.5, 0.0),
+    "shot-minomarkt-nl": ("Images/Screenshots/minomarkt-nl.jpg", 418, 261, 0.5, 0.0),
     "robot": ("Images/Robot.jpg", 245, 250, 0.5, 0.5),
     "socialrobot": ("Images/SocialRobot.jpg", 245, 250, 0.45, 0.5),
     # YouTube thumbnails: the videos are vertical, so keep the 9:16 middle
