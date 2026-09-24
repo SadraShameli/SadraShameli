@@ -1,7 +1,6 @@
 """Shared SVG plumbing: themes, embedded fonts, text measuring, escaping.
 
-Everything here is stdlib-only so the GitHub Action can run it without
-installing anything.
+Everything here is stdlib-only, so building needs nothing installed.
 """
 
 from __future__ import annotations

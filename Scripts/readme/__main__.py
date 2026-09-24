@@ -1,7 +1,6 @@
 """Build the README graphics.
 
-    python Scripts/readme static            # hand-designed cards -> Assets/Readme
-    python Scripts/readme live --out DIR    # data-driven cards (GitHub + SensorHub)
+    python Scripts/readme static            # -> Assets/Readme
 """
 
 from __future__ import annotations
@@ -33,16 +32,8 @@ def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(prog="readme")
     sub = parser.add_subparsers(dest="cmd", required=True)
     sub.add_parser("static")
-    live = sub.add_parser("live")
-    live.add_argument("--out", type=Path, required=True)
-    args = parser.parse_args(argv)
-    if args.cmd == "static":
-        build_static(STATIC_OUT)
-    else:
-        from live import build_live
-
-        # a failed source keeps its previous cards, so this never fails the run
-        build_live(args.out)
+    parser.parse_args(argv)
+    build_static(STATIC_OUT)
     return 0
 
 
