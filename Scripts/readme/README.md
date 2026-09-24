@@ -3,7 +3,7 @@
 Everything in [`Assets/Readme`](../../Assets/Readme) comes from here. Only the Python standard library is needed.
 
 ```sh
-python3 Scripts/readme static   # every card -> Assets/Readme
+python3 Scripts/readme static   # every card -> Assets/Readme, then repoints README.md at them
 ```
 
 | File | What it draws |
@@ -19,6 +19,6 @@ python3 Scripts/readme static   # every card -> Assets/Readme
 | `svg.py` | themes, embedded fonts, text measuring |
 | `prep_images.py` | one-off photo and thumbnail crops for the cards (needs Pillow) |
 
-Every card is built twice, `-dark` and `-light`, and the README picks one with `<picture>`. A README image can only link to one place, so each button is its own tiny SVG: the card is drawn with an open bottom and the buttons sit flush under it (`align="top"` and no whitespace between them), so together they read as one card. Animations are CSS, and each element's resting style is its final frame, so `prefers-reduced-motion` still gets a complete picture.
+Every card is built twice, `-dark` and `-light`, and the README picks one with `<picture>`. File names carry a hash of their contents (`hero-dark.1a2b3c4d.svg`), and the build rewrites the README to match, so a browser can't mix a cached old card with new buttons. A README image can only link to one place, so each button is its own tiny SVG: the card is drawn with an open bottom and the buttons sit flush under it (`align="top"` and no whitespace between them), so together they read as one card. Animations are CSS, and each element's resting style is its final frame, so `prefers-reduced-motion` still gets a complete picture.
 
 Fonts: [Geist](https://github.com/vercel/geist-font) and [Orbitron](https://github.com/theleagueof/orbitron), subset to the glyphs used, under the SIL Open Font License ([`Scripts/fonts`](../fonts)).
