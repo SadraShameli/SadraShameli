@@ -165,10 +165,6 @@ def _pipeline(t: Theme, x: float, y: float, w: float, h: float) -> tuple[str, st
             f"#p{i}{{animation:p{i} {period}s linear {delay}s infinite both;fill:{t.text}}}"
         )
         parts.append(f'<circle id="p{i}" cx="{cx}" cy="{top}" r="5"/>')
-    parts.append(
-        f'<text x="{x + 18}" y="{y + h - 14}" font-family="{MONO}" font-size="11" '
-        f'fill="{t.faint}">illustrative flow, not live data</text>'
-    )
     return "".join(parts), "".join(css)
 
 
