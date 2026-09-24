@@ -15,9 +15,10 @@ python3 Scripts/readme static   # every card -> Assets/Readme
 | `stack.py` | the tech stack chips (edit `STACK`) |
 | `terminal.py` | the terminals: YouTube, documents, and the hiring / developer / robot / Sandra ones (edit `HIRING`, `DEVELOPER`, `ME`) |
 | `footer.py` | the `exit` at the bottom |
+| `dock.py` | the link buttons that form the bottom edge of a card (edit `DOCKS`); `readme_html()` prints the matching README markup |
 | `svg.py` | themes, embedded fonts, text measuring |
 | `prep_images.py` | one-off photo and thumbnail crops for the cards (needs Pillow) |
 
-Every card is built twice, `-dark` and `-light`, and the README picks one with `<picture>`. Animations are CSS, and each element's resting style is its final frame, so `prefers-reduced-motion` still gets a complete picture.
+Every card is built twice, `-dark` and `-light`, and the README picks one with `<picture>`. A README image can only link to one place, so each button is its own tiny SVG: the card is drawn with an open bottom and the buttons sit flush under it (`align="top"` and no whitespace between them), so together they read as one card. Animations are CSS, and each element's resting style is its final frame, so `prefers-reduced-motion` still gets a complete picture.
 
 Fonts: [Geist](https://github.com/vercel/geist-font) and [Orbitron](https://github.com/theleagueof/orbitron), subset to the glyphs used, under the SIL Open Font License ([`Scripts/fonts`](../fonts)).

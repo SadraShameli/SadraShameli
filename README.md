@@ -11,56 +11,41 @@
 
 -->
 
-<a href="https://sadra.nl">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/hero-dark.svg">
-    <img alt="Sadra Shameli: full-stack developer, futures trader, hardware tinkerer. A terminal types whoami, answers sandra, then fixes the typo to sadra." src="Assets/Readme/hero-light.svg" width="100%">
-  </picture>
-</a>
-
-<p align="center">
-  <a href="https://sadra.nl"><kbd> ↗ sadra.nl </kbd></a>&nbsp;
-  <a href="https://linkedin.com/in/sadrashameli"><kbd> LinkedIn </kbd></a>&nbsp;
-  <a href="https://youtube.com/@SadraShameli"><kbd> YouTube </kbd></a>&nbsp;
-  <a href="mailto:sadra.shameli1@gmail.com"><kbd> Email </kbd></a>&nbsp;
-  <a href="Documents/Resume%20-%20Sadra.pdf"><kbd> Resume.pdf </kbd></a>
+<p>
+<a href="https://sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/hero-dark.svg"><img align="top" alt="Sadra Shameli: full-stack developer, futures trader, hardware tinkerer. A terminal types whoami, answers sandra, then fixes the typo to sadra." src="Assets/Readme/hero-light.svg" width="100%"></picture></a><br>
+<a href="https://sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/hero-0-0-dark.svg"><img align="top" alt="sadra.nl" src="Assets/Readme/dock/hero-0-0-light.svg" width="20%"></picture></a><a href="https://linkedin.com/in/sadrashameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/hero-0-1-dark.svg"><img align="top" alt="LinkedIn" src="Assets/Readme/dock/hero-0-1-light.svg" width="20%"></picture></a><a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/hero-0-2-dark.svg"><img align="top" alt="YouTube" src="Assets/Readme/dock/hero-0-2-light.svg" width="20%"></picture></a><a href="mailto:sadra.shameli1@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/hero-0-3-dark.svg"><img align="top" alt="Email" src="Assets/Readme/dock/hero-0-3-light.svg" width="20%"></picture></a><a href="Documents/Resume%20-%20Sadra.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/hero-0-4-dark.svg"><img align="top" alt="Resume.pdf" src="Assets/Readme/dock/hero-0-4-light.svg" width="20%"></picture></a>
 </p>
 
+<p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/intro-dark.svg">
-  <img alt="Hey, I'm Sadra, not Sandra. I like owning things end to end: C++ firmware on an ESP32, a tRPC and Postgres backend, the Next.js dashboard that plots it all, and the CI that keeps both honest. By day I'm a full-stack developer at Nobears in Rotterdam, shipping and maintaining 15+ WordPress platforms. By night I trade NQ futures and I'm teaching a Python engine to trade them with me." src="Assets/Readme/intro-light.svg" width="100%">
+  <img align="top" alt="Hey, I'm Sadra, not Sandra. I like owning things end to end: C++ firmware on an ESP32, a tRPC and Postgres backend, the Next.js dashboard that plots it all, and the CI that keeps both honest. By day I'm a full-stack developer at Nobears in Rotterdam, shipping and maintaining 15+ WordPress platforms. By night I trade NQ futures and I'm teaching a Python engine to trade them with me." src="Assets/Readme/intro-light.svg" width="100%">
 </picture>
+</p>
 
+<p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/about-dark.svg">
-  <img alt="neofetch-style card: full-stack developer at Nobears, 4+ years shipping production code, TypeScript, Python, C++, PHP, SQL" src="Assets/Readme/about-light.svg" width="100%">
+  <img align="top" alt="neofetch-style card: full-stack developer at Nobears, 4+ years shipping production code, TypeScript, Python, C++, PHP, SQL" src="Assets/Readme/about-light.svg" width="100%">
 </picture>
+</p>
 
 <br>
 
-<a href="https://github.com/SadraShameli/sensorhub">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-sensorhub-dark.svg">
-    <img alt="SensorHub: ESP32 sensor units I design, 3D-print and program. They report climate and loudness to sadra.nl." src="Assets/Readme/project-sensorhub-light.svg" width="100%">
-  </picture>
-</a>
-<p align="right">
-  <a href="https://github.com/SadraShameli/sensorhub/blob/main/Assets/3D%20Models/Sensor%20Unit/Casing%20body.stl"><kbd> 🧊 Spin the SensorHub enclosure in 3D ↗ </kbd></a>
+<p>
+<a href="https://github.com/SadraShameli/sensorhub"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-sensorhub-dark.svg"><img align="top" alt="SensorHub: ESP32 sensor units I design, 3D-print and program. They report climate and loudness to sadra.nl." src="Assets/Readme/project-sensorhub-light.svg" width="100%"></picture></a><br>
+<a href="https://github.com/SadraShameli/sensorhub"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-sensorhub-0-0-dark.svg"><img align="top" alt="Source code" src="Assets/Readme/dock/project-sensorhub-0-0-light.svg" width="50%"></picture></a><a href="https://github.com/SadraShameli/sensorhub/blob/main/Assets/3D%20Models/Sensor%20Unit/Casing%20body.stl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-sensorhub-0-1-dark.svg"><img align="top" alt="Spin the enclosure in 3D" src="Assets/Readme/dock/project-sensorhub-0-1-light.svg" width="50%"></picture></a>
 </p>
 
-<a href="Documents/Resume%20-%20Sadra%202.pdf">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-tradingbot-dark.svg">
-    <img alt="TradingBot: the modular quant framework I trade my own capital with. Private repository." src="Assets/Readme/project-tradingbot-light.svg" width="100%">
-  </picture>
-</a>
+<p>
+<a href="Documents/Resume%20-%20Sadra%202.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-tradingbot-dark.svg"><img align="top" alt="TradingBot: the modular quant framework I trade my own capital with. Private repository." src="Assets/Readme/project-tradingbot-light.svg" width="100%"></picture></a><br>
+<a href="Documents/Resume%20-%20Sadra%202.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-tradingbot-0-0-dark.svg"><img align="top" alt="The quant resume" src="Assets/Readme/dock/project-tradingbot-0-0-light.svg" width="50%"></picture></a><a href="mailto:sadra.shameli1@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-tradingbot-0-1-dark.svg"><img align="top" alt="Ask me for a walkthrough" src="Assets/Readme/dock/project-tradingbot-0-1-light.svg" width="50%"></picture></a>
+</p>
 
-<a href="https://github.com/SadraShameli/ProjectAI">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-projectai-dark.svg">
-    <img alt="Project A.I.: a self-driving robot car with on-device TensorFlow inference, lidar and a 3D-printed chassis" src="Assets/Readme/project-projectai-light.svg" width="100%">
-  </picture>
-</a>
+<p>
+<a href="https://github.com/SadraShameli/ProjectAI"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-projectai-dark.svg"><img align="top" alt="Project A.I.: a self-driving robot car with on-device TensorFlow inference, lidar and a 3D-printed chassis" src="Assets/Readme/project-projectai-light.svg" width="100%"></picture></a><br>
+<a href="https://github.com/SadraShameli/ProjectAI"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-projectai-0-0-dark.svg"><img align="top" alt="Source code" src="Assets/Readme/dock/project-projectai-0-0-light.svg" width="50%"></picture></a><a href="https://www.youtube.com/shorts/abyVlfAETG0"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-projectai-0-1-dark.svg"><img align="top" alt="Watch it drive" src="Assets/Readme/dock/project-projectai-0-1-light.svg" width="50%"></picture></a>
+</p>
 
 <p>
   <a href="https://sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-sadra-nl-dark.svg"><img alt="sadra.nl: portfolio, live SensorHub dashboard, trading journal and more" src="Assets/Readme/tile-sadra-nl-light.svg" width="49%"></picture></a>
@@ -73,96 +58,57 @@
 
 <br>
 
+<p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/stack-dark.svg">
-  <img alt="Tech stack. Web: TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, tRPC, TanStack Query, Zod, Better Auth. Backend: PHP, WordPress, WooCommerce, Twig, .NET, Node.js, Bun. Data: PostgreSQL, Drizzle, MySQL, Redis. Firmware: C++, ESP-IDF, FreeRTOS, Arduino, PlatformIO. Quant and ML: Python, PyTorch, NumPy, Pandas, Pydantic, TensorFlow. Shipping: Docker, GitHub Actions, Vercel, Sentry, Vitest, Playwright, Git. Making: Fusion 360, Blender, PrusaSlicer, Prusa MK3S+, Prusa Mini+, Vertex K8400." src="Assets/Readme/stack-light.svg" width="100%">
+  <img align="top" alt="Tech stack. Web: TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, tRPC, TanStack Query, Zod, Better Auth. Backend: PHP, WordPress, WooCommerce, Twig, .NET, Node.js, Bun. Data: PostgreSQL, Drizzle, MySQL, Redis. Firmware: C++, ESP-IDF, FreeRTOS, Arduino, PlatformIO. Quant and ML: Python, PyTorch, NumPy, Pandas, Pydantic, TensorFlow. Shipping: Docker, GitHub Actions, Vercel, Sentry, Vitest, Playwright, Git. Making: Fusion 360, Blender, PrusaSlicer, Prusa MK3S+, Prusa Mini+, Vertex K8400." src="Assets/Readme/stack-light.svg" width="100%">
 </picture>
-
-<br>
-
-<a href="https://youtube.com/@SadraShameli">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/youtube-dark.svg">
-    <img alt="Terminal listing my top YouTube videos: line detection for A.I. (2.7k+ views), range detection with lidar (1.1k+ views) and my self-driving robot's first indoor test (500+ views)" src="Assets/Readme/youtube-light.svg" width="100%">
-  </picture>
-</a>
-
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=1142rRZ3rzc"><kbd> ▶ Line detection </kbd></a>&nbsp;
-  <a href="https://www.youtube.com/watch?v=_C8PnLK2SWA"><kbd> ▶ Lidar ranging </kbd></a>&nbsp;
-  <a href="https://www.youtube.com/shorts/abyVlfAETG0"><kbd> ▶ Indoor test drive </kbd></a>&nbsp;
-  <a href="https://youtube.com/@SadraShameli"><kbd> ↗ Channel </kbd></a>
 </p>
 
 <br>
 
-<a href="Documents/Resume%20-%20Sadra.pdf">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-hiring-dark.svg">
-  <img alt="cat hiring.md: 4+ years in production at Nobears and Blue Star Planning, end-to-end ownership from 3D-printed devices to frontend, tools that save 1 to 2 days per project, based in Rijswijk, NL" src="Assets/Readme/sh-hiring-light.svg" width="100%">
-</picture>
-</a>
-
-<p align="center">
-  <a href="https://www.nobears.com"><kbd> Nobears </kbd></a>&nbsp;
-  <a href="https://bluestarplanning.com"><kbd> Blue Star Planning </kbd></a>&nbsp;
-  <a href="Documents/Resume%20-%20Sadra.pdf"><kbd> Resume · full-stack </kbd></a>&nbsp;
-  <a href="Documents/Resume%20-%20Sadra%202.pdf"><kbd> Resume · quant </kbd></a>&nbsp;
-  <a href="Documents/Letter%20of%20Recommendation.pdf"><kbd> Letter of recommendation </kbd></a>&nbsp;
-  <a href="mailto:sadra.shameli1@gmail.com"><kbd> Email </kbd></a>
+<p>
+<a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/youtube-dark.svg"><img align="top" alt="Terminal listing my top YouTube videos: line detection for A.I. (2.7k+ views), range detection with lidar (1.1k+ views) and my self-driving robot's first indoor test (500+ views)" src="Assets/Readme/youtube-light.svg" width="100%"></picture></a><br>
+<a href="https://www.youtube.com/watch?v=1142rRZ3rzc"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/youtube-0-0-dark.svg"><img align="top" alt="Line detection" src="Assets/Readme/dock/youtube-0-0-light.svg" width="25%"></picture></a><a href="https://www.youtube.com/watch?v=_C8PnLK2SWA"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/youtube-0-1-dark.svg"><img align="top" alt="Lidar ranging" src="Assets/Readme/dock/youtube-0-1-light.svg" width="25%"></picture></a><a href="https://www.youtube.com/shorts/abyVlfAETG0"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/youtube-0-2-dark.svg"><img align="top" alt="Indoor test drive" src="Assets/Readme/dock/youtube-0-2-light.svg" width="25%"></picture></a><a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/youtube-0-3-dark.svg"><img align="top" alt="Channel" src="Assets/Readme/dock/youtube-0-3-light.svg" width="25%"></picture></a>
 </p>
 
-<a href="https://github.com/SadraShameli/sensorhub">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-developer-dark.svg">
-  <img alt="cat interesting-bits.md: SensorHub's IMA-ADPCM loud-event recorder, a FreeRTOS service kernel, end-to-end type safety on sadra.nl, walk-forward validated trading strategies, and this README as a build artifact" src="Assets/Readme/sh-developer-light.svg" width="100%">
-</picture>
-</a>
+<br>
 
-<p align="center">
-  <a href="https://github.com/SadraShameli/sensorhub/blob/main/include/AdpcmRecorder.h"><kbd> IMA-ADPCM encoder </kbd></a>&nbsp;
-  <a href="https://github.com/SadraShameli/sensorhub/blob/main/src/core/Kernel.cpp"><kbd> Service kernel </kbd></a>&nbsp;
-  <a href="https://github.com/SadraShameli/sadra.nl"><kbd> sadra.nl source </kbd></a>&nbsp;
-  <a href="Scripts/readme"><kbd> Scripts/readme </kbd></a>
+<p>
+<a href="Documents/Resume%20-%20Sadra.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-hiring-dark.svg"><img align="top" alt="cat hiring.md: 4+ years in production at Nobears and Blue Star Planning, end-to-end ownership from 3D-printed devices to frontend, tools that save 1 to 2 days per project, based in Rijswijk, NL" src="Assets/Readme/sh-hiring-light.svg" width="100%"></picture></a><br>
+<a href="https://www.nobears.com"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-hiring-0-0-dark.svg"><img align="top" alt="Nobears" src="Assets/Readme/dock/sh-hiring-0-0-light.svg" width="33.3333%"></picture></a><a href="https://bluestarplanning.com"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-hiring-0-1-dark.svg"><img align="top" alt="Blue Star Planning" src="Assets/Readme/dock/sh-hiring-0-1-light.svg" width="33.3333%"></picture></a><a href="mailto:sadra.shameli1@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-hiring-0-2-dark.svg"><img align="top" alt="Email" src="Assets/Readme/dock/sh-hiring-0-2-light.svg" width="33.3333%"></picture></a><br>
+<a href="Documents/Resume%20-%20Sadra.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-hiring-1-0-dark.svg"><img align="top" alt="Resume · full-stack" src="Assets/Readme/dock/sh-hiring-1-0-light.svg" width="33.3333%"></picture></a><a href="Documents/Resume%20-%20Sadra%202.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-hiring-1-1-dark.svg"><img align="top" alt="Resume · quant" src="Assets/Readme/dock/sh-hiring-1-1-light.svg" width="33.3333%"></picture></a><a href="Documents/Letter%20of%20Recommendation.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-hiring-1-2-dark.svg"><img align="top" alt="Letter of recommendation" src="Assets/Readme/dock/sh-hiring-1-2-light.svg" width="33.3333%"></picture></a>
 </p>
 
-<a href="https://sadra.nl">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-robot-dark.svg">
-  <img alt="cat sadra.json: name Sadra Shameli, not Sandra, location Rijswijk NL, roles full-stack developer, futures trader, hardware tinkerer" src="Assets/Readme/sh-robot-light.svg" width="100%">
-</picture>
-</a>
-
-<p align="center">
-  <a href="https://sadra.nl"><kbd> sadra.nl </kbd></a>&nbsp;
-  <a href="https://linkedin.com/in/sadrashameli"><kbd> LinkedIn </kbd></a>&nbsp;
-  <a href="https://youtube.com/@SadraShameli"><kbd> YouTube </kbd></a>
+<p>
+<a href="https://github.com/SadraShameli/sensorhub"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-developer-dark.svg"><img align="top" alt="cat interesting-bits.md: SensorHub's IMA-ADPCM loud-event recorder, a FreeRTOS service kernel, end-to-end type safety on sadra.nl, walk-forward validated trading strategies, and this README as a build artifact" src="Assets/Readme/sh-developer-light.svg" width="100%"></picture></a><br>
+<a href="https://github.com/SadraShameli/sensorhub/blob/main/include/AdpcmRecorder.h"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-developer-0-0-dark.svg"><img align="top" alt="IMA-ADPCM encoder" src="Assets/Readme/dock/sh-developer-0-0-light.svg" width="25%"></picture></a><a href="https://github.com/SadraShameli/sensorhub/blob/main/src/core/Kernel.cpp"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-developer-0-1-dark.svg"><img align="top" alt="Service kernel" src="Assets/Readme/dock/sh-developer-0-1-light.svg" width="25%"></picture></a><a href="https://github.com/SadraShameli/sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-developer-0-2-dark.svg"><img align="top" alt="sadra.nl source" src="Assets/Readme/dock/sh-developer-0-2-light.svg" width="25%"></picture></a><a href="Scripts/readme"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-developer-0-3-dark.svg"><img align="top" alt="Scripts/readme" src="Assets/Readme/dock/sh-developer-0-3-light.svg" width="25%"></picture></a>
 </p>
 
+<p>
+<a href="https://sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-robot-dark.svg"><img align="top" alt="cat sadra.json: name Sadra Shameli, not Sandra, location Rijswijk NL, roles full-stack developer, futures trader, hardware tinkerer" src="Assets/Readme/sh-robot-light.svg" width="100%"></picture></a><br>
+<a href="https://sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-robot-0-0-dark.svg"><img align="top" alt="sadra.nl" src="Assets/Readme/dock/sh-robot-0-0-light.svg" width="33.3333%"></picture></a><a href="https://linkedin.com/in/sadrashameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-robot-0-1-dark.svg"><img align="top" alt="LinkedIn" src="Assets/Readme/dock/sh-robot-0-1-light.svg" width="33.3333%"></picture></a><a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-robot-0-2-dark.svg"><img align="top" alt="YouTube" src="Assets/Readme/dock/sh-robot-0-2-light.svg" width="33.3333%"></picture></a>
+</p>
+
+<p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-sandra-dark.svg">
-  <img alt="whois sandra: No match for SANDRA. Wrong profile, but honestly, I get that a lot. Good luck finding her." src="Assets/Readme/sh-sandra-light.svg" width="100%">
+  <img align="top" alt="whois sandra: No match for SANDRA. Wrong profile, but honestly, I get that a lot. Good luck finding her." src="Assets/Readme/sh-sandra-light.svg" width="100%">
 </picture>
-
-<br>
-
-<a href="Documents">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/documents-dark.svg">
-    <img alt="Terminal listing my documents: letter of recommendation, a 95-page A.I. thesis in Dutch, and my quant and full-stack resumes" src="Assets/Readme/documents-light.svg" width="100%">
-  </picture>
-</a>
-
-<p align="center">
-  <a href="Documents/Resume%20-%20Sadra.pdf"><kbd> Resume · full-stack </kbd></a>&nbsp;
-  <a href="Documents/Resume%20-%20Sadra%202.pdf"><kbd> Resume · quant </kbd></a>&nbsp;
-  <a href="Documents/Letter%20of%20Recommendation.pdf"><kbd> Letter of recommendation </kbd></a>&nbsp;
-  <a href="Documents/PWS%20-%20Artificial%20Intelligence.pdf"><kbd> A.I. thesis (PWS) </kbd></a>
 </p>
 
 <br>
 
+<p>
+<a href="Documents"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/documents-dark.svg"><img align="top" alt="Terminal listing my documents: letter of recommendation, a 95-page A.I. thesis in Dutch, and my quant and full-stack resumes" src="Assets/Readme/documents-light.svg" width="100%"></picture></a><br>
+<a href="Documents/Resume%20-%20Sadra.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/documents-0-0-dark.svg"><img align="top" alt="Resume · full-stack" src="Assets/Readme/dock/documents-0-0-light.svg" width="25%"></picture></a><a href="Documents/Resume%20-%20Sadra%202.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/documents-0-1-dark.svg"><img align="top" alt="Resume · quant" src="Assets/Readme/dock/documents-0-1-light.svg" width="25%"></picture></a><a href="Documents/Letter%20of%20Recommendation.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/documents-0-2-dark.svg"><img align="top" alt="Letter of recommendation" src="Assets/Readme/dock/documents-0-2-light.svg" width="25%"></picture></a><a href="Documents/PWS%20-%20Artificial%20Intelligence.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/documents-0-3-dark.svg"><img align="top" alt="A.I. thesis (PWS)" src="Assets/Readme/dock/documents-0-3-light.svg" width="25%"></picture></a>
+</p>
+
+<br>
+
+<p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/footer-dark.svg">
-  <img alt="~ $ exit. logout. thanks for scrolling, come say hi at sadra.nl" src="Assets/Readme/footer-light.svg" width="100%">
+  <img align="top" alt="~ $ exit. logout. thanks for scrolling, come say hi at sadra.nl" src="Assets/Readme/footer-light.svg" width="100%">
 </picture>
+</p>

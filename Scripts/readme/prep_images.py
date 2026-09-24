@@ -16,8 +16,8 @@ SCALE = 1.5  # retina-ish without bloating the SVGs
 
 # name: (source, frame w, frame h, focus x, focus y)  focus = 0..1 in the source
 JOBS = {
-    "sensorhub": ("Images/SensorHub1.jpg", 400, 364, 0.5, 0.58),
-    "projectai": ("Images/ProjectAI.jpg", 400, 364, 0.52, 0.55),
+    "sensorhub": ("Images/SensorHub1.jpg", 400, 320, 0.5, 0.58),
+    "projectai": ("Images/ProjectAI.jpg", 400, 320, 0.52, 0.55),
     "sadra-nl": ("Images/Screenshots/sadra-nl.jpg", 490, 250, 0.5, 0.28),
     "prop-calculator": ("Images/Screenshots/prop-calculator.jpg", 490, 250, 0.5, 0.0),
     "minomarkt-nl": ("Images/Screenshots/minomarkt-nl.jpg", 490, 250, 0.5, 0.25),

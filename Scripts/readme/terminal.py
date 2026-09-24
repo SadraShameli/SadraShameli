@@ -11,6 +11,7 @@ import re
 from dataclasses import dataclass
 
 from cards import embed_jpeg, wrap
+from dock import docked
 from svg import MONO, MONO_ADVANCE, ROOT, SANS, Theme, card_frame, clip_card, document, esc, font_css
 
 
@@ -72,11 +73,11 @@ class Terminal:
             f'height="{fs * 1.05:.1f}" fill="{self.t.text}" style="animation:blink 1.05s step-end infinite"/></g>'
         )
 
-    def render(self, height: float, fonts: tuple, desc: str) -> str:
+    def render(self, height: float, fonts: tuple, desc: str, open_bottom: bool = False) -> str:
         t, w, th = self.t, self.w, self.TITLE_H
         chrome = [
-            "<defs>" + clip_card("clip", w, height, 14) + "</defs>",
-            card_frame(t, w, height, 14),
+            "<defs>" + clip_card("clip", w, height, 14, open_bottom) + "</defs>",
+            card_frame(t, w, height, 14, open_bottom),
             '<g clip-path="url(#clip)">',
             f'<rect width="{w}" height="{th}" fill="{t.panel}"/>',
             f'<line x1="0" y1="{th}" x2="{w}" y2="{th}" stroke="{t.border}"/>',
@@ -167,7 +168,7 @@ def youtube(t: Theme) -> str:
     cx = term.prompt(x0, prompt_y, "~/youtube")
     term.cursor(cx, prompt_y, end)
     desc = "; ".join(f"{v.title} ({_views(v.views)})" for v in VIDEOS)
-    return term.render(prompt_y + 30, (("sgm", 400), ("sgm", 600), ("sgs", 400)), desc)
+    return term.render(prompt_y + 30, (("sgm", 400), ("sgm", 600), ("sgs", 400)), desc, docked("youtube"))
 
 
 # ── ~/Documents ─────────────────────────────────────────────────────────────
@@ -222,7 +223,7 @@ def documents(t: Theme) -> str:
     cx = term.prompt(x0, prompt_y, "~/Documents")
     term.cursor(cx, prompt_y, end)
     desc = "; ".join(f"{name}: {note}" for name, _, note in DOCUMENTS)
-    return term.render(prompt_y + 30, (("sgm", 400), ("sgm", 600)), desc)
+    return term.render(prompt_y + 30, (("sgm", 400), ("sgm", 600)), desc, docked("documents"))
 
 
 # ── the "pick your path" sections ───────────────────────────────────────────
@@ -302,7 +303,7 @@ def _runs_svg(t: Theme, words: list[tuple[str, str]]) -> str:
     return "".join(out)
 
 
-def notes(t: Theme, command: str, comment: str, bullets: list[Bullet], desc: str) -> str:
+def notes(t: Theme, name: str, command: str, comment: str, bullets: list[Bullet], desc: str) -> str:
     W, x0, cmd_y, lh = 1000, 36, 84, 23
     term = Terminal(t, W, "sadra@rijswijk: ~")
     done = term.command(x0, cmd_y, "~", command, comment)
@@ -323,7 +324,7 @@ def notes(t: Theme, command: str, comment: str, bullets: list[Bullet], desc: str
     prompt_y = y + 18
     cx = term.prompt(x0, prompt_y, "~")
     term.cursor(cx, prompt_y, delay + 0.2)
-    return term.render(prompt_y + 30, (("sgm", 400), ("sgm", 600)), desc)
+    return term.render(prompt_y + 30, (("sgm", 400), ("sgm", 600)), desc, docked(name))
 
 
 def _json_lines(value, indent: int = 0, key: str | None = None, last: bool = True) -> list[tuple[int, str]]:
@@ -376,7 +377,7 @@ def robot(t: Theme) -> str:
     prompt_y = y + 18
     cx = term.prompt(x0, prompt_y, "~")
     term.cursor(cx, prompt_y, delay + 0.2)
-    return term.render(prompt_y + 30, (("sgm", 400), ("sgm", 600)), "sadra.json: " + ", ".join(f"{k}: {v}" for k, v in ME.items()))
+    return term.render(prompt_y + 30, (("sgm", 400), ("sgm", 600)), "sadra.json: " + ", ".join(f"{k}: {v}" for k, v in ME.items()), docked("sh-robot"))
 
 
 def sandra(t: Theme) -> str:
@@ -402,11 +403,11 @@ def sandra(t: Theme) -> str:
 def paths(t: Theme) -> dict[str, str]:
     return {
         "sh-hiring": notes(
-            t, "cat hiring.md", "hiring? the 30-second version", HIRING,
+            t, "sh-hiring", "cat hiring.md", "hiring? the 30-second version", HIRING,
             "The 30-second version for people who are hiring.",
         ),
         "sh-developer": notes(
-            t, "cat interesting-bits.md", "developer? the interesting bits", DEVELOPER,
+            t, "sh-developer", "cat interesting-bits.md", "developer? the interesting bits", DEVELOPER,
             "The interesting technical bits.",
         ),
         "sh-robot": robot(t),

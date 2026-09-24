@@ -10,6 +10,7 @@ import base64
 from dataclasses import dataclass, field
 from functools import lru_cache
 
+from dock import docked
 from svg import (
     DISPLAY,
     MONO,
@@ -184,10 +185,28 @@ def _chip(t: Theme, x: float, y: float, text: str, dot: str | None = None, blink
 # ── layouts ─────────────────────────────────────────────────────────────────
 
 
+# where the lidar puck sits in the prepared Project A.I. photo, as a fraction of it
+LIDAR_AT = (0.476, 0.357)
+PHOTO_W, PHOTO_H = 400, 320  # frame the photos are prepared for
+
+
+def _in_frame(fx: float, fy: float, fw: float, fh: float) -> tuple[float, float]:
+    """Map a point of a prepared photo into a frame it fills with xMidYMid slice."""
+    scale = max(fw / PHOTO_W, fh / PHOTO_H)
+    dw, dh = PHOTO_W * scale, PHOTO_H * scale
+    return (fw - dw) / 2 + fx * dw, (fh - dh) / 2 + fy * dh
+
+
 def featured(t: Theme, p: Project, visual: str) -> str:
-    W, H, PW = 1000, 364, 400
+    # with a dock the links live in the buttons under the card, so the card drops its link row
+    open_bottom = docked(f"project-{p.slug}")
+    W, H, PW = 1000, (320 if open_bottom else 364), 400
     css = [_base_css(t)]
-    body = ["<defs>" + clip_card("clip", W, H) + "</defs>", card_frame(t, W, H), '<g clip-path="url(#clip)">']
+    body = [
+        "<defs>" + clip_card("clip", W, H, open_bottom=open_bottom) + "</defs>",
+        card_frame(t, W, H, open_bottom=open_bottom),
+        '<g clip-path="url(#clip)">',
+    ]
 
     if visual == "pipeline":
         svg, vcss = _pipeline(t, 0, 0, PW, H)
@@ -198,7 +217,7 @@ def featured(t: Theme, p: Project, visual: str) -> str:
             f'<image href="{embed_jpeg(p.image)}" x="0" y="0" width="{PW}" height="{H}" preserveAspectRatio="xMidYMid slice"/>'
         )
         if visual == "lidar":
-            svg, vcss = _lidar(t, 189, 130)
+            svg, vcss = _lidar(t, *(round(v) for v in _in_frame(*LIDAR_AT, PW, H)))
             body.append(f'<g clip-path="url(#photo)">{svg}</g>')
             body.insert(0, f'<defs><clipPath id="photo"><rect width="{PW}" height="{H}"/></clipPath></defs>')
             css.append(vcss)
@@ -229,10 +248,11 @@ def featured(t: Theme, p: Project, visual: str) -> str:
             f'<tspan class="sv" x="{x + key_w * 7.8:.1f}">{esc(v)}</tspan></text>'
         )
         y += 22
-    body.append(
-        f'<line x1="{x}" y1="{H - 52}" x2="{right}" y2="{H - 52}" stroke="{t.border}"/>'
-        f'<text x="{x}" y="{H - 26}" class="ln">{esc(p.link)}</text>'
-    )
+    if not open_bottom:
+        body.append(
+            f'<line x1="{x}" y1="{H - 52}" x2="{right}" y2="{H - 52}" stroke="{t.border}"/>'
+            f'<text x="{x}" y="{H - 26}" class="ln">{esc(p.link)}</text>'
+        )
     body.append("</g>")
     return document(W, H, "".join(body), "".join(css), title=p.title, desc=p.desc)
 

@@ -17,13 +17,14 @@ STATIC_OUT = ROOT / "Assets" / "Readme"
 def build_static(out: Path) -> None:
     from about import about
     from cards import all_cards
+    from dock import all_docks
     from footer import footer
     from hero import hero
     from intro import intro
     from stack import stack
     from terminal import documents, paths, youtube
 
-    out.mkdir(parents=True, exist_ok=True)
+    (out / "dock").mkdir(parents=True, exist_ok=True)
     for t in THEMES:
         files = {
             "hero": hero(t),
@@ -35,6 +36,7 @@ def build_static(out: Path) -> None:
             "footer": footer(t),
             **paths(t),
             **all_cards(t),
+            **all_docks(t),
         }
         for name, svg in files.items():
             (out / f"{name}-{t.name}.svg").write_text(svg, encoding="utf-8")

@@ -8,6 +8,7 @@ blink the way the firmware blinks them (yellow = connecting, green = upload).
 
 from __future__ import annotations
 
+from dock import docked
 from svg import (
     DISPLAY,
     MONO,
@@ -297,7 +298,7 @@ def hero(t: Theme) -> str:
     )
     body = (
         "<defs>"
-        + clip_card("clip", W, H)
+        + clip_card("clip", W, H, open_bottom=docked("hero"))
         + '<linearGradient id="sh" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
         '<stop offset=".5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
         '<mask id="nameMask"><rect width="1000" height="360" fill="#000"/>'
@@ -306,7 +307,7 @@ def hero(t: Theme) -> str:
         '<stop offset="1" stop-opacity="0"/></radialGradient>'
         '<filter id="glow" x="-1" y="-1" width="3" height="3"><feGaussianBlur stdDeviation="3.2"/></filter>'
         "</defs>"
-        + card_frame(t, W, H)
+        + card_frame(t, W, H, open_bottom=docked("hero"))
         + '<g clip-path="url(#clip)">'
         + dot_grid(t, "dots", W, H)
         # logo + coordinates

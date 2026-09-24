@@ -177,17 +177,26 @@ def document(w: float, h: float, body: str, css: str, title: str, desc: str = ""
     )
 
 
-def card_frame(t: Theme, w: float, h: float, radius: int = 16) -> str:
+def card_frame(t: Theme, w: float, h: float, radius: int = 16, open_bottom: bool = False) -> str:
+    """The card outline. `open_bottom` leaves the bottom edge to a dock of link buttons below it."""
+    if not open_bottom:
+        return (
+            f'<rect x=".5" y=".5" width="{w - 1:g}" height="{h - 1:g}" rx="{radius}" '
+            f'fill="{t.bg}" stroke="{t.border}"/>'
+        )
+    r, ri = radius, radius - 0.5
     return (
-        f'<rect x=".5" y=".5" width="{w - 1:g}" height="{h - 1:g}" rx="{radius}" '
-        f'fill="{t.bg}" stroke="{t.border}"/>'
+        f'<path d="M0 {h:g}V{r}A{r} {r} 0 0 1 {r} 0H{w - r:g}A{r} {r} 0 0 1 {w:g} {r}V{h:g}Z" fill="{t.bg}"/>'
+        f'<path d="M.5 {h:g}V{r}A{ri} {ri} 0 0 1 {r} .5H{w - r:g}A{ri} {ri} 0 0 1 {w - 0.5:g} {r}V{h:g}" '
+        f'fill="none" stroke="{t.border}"/>'
     )
 
 
-def clip_card(cid: str, w: float, h: float, radius: int = 16) -> str:
+def clip_card(cid: str, w: float, h: float, radius: int = 16, open_bottom: bool = False) -> str:
+    extra = f'<rect x="1" y="{h / 2:g}" width="{w - 2:g}" height="{h / 2:g}"/>' if open_bottom else ""
     return (
         f'<clipPath id="{cid}"><rect x="1" y="1" width="{w - 2:g}" height="{h - 2:g}" '
-        f'rx="{radius - 1}"/></clipPath>'
+        f'rx="{radius - 1}"/>{extra}</clipPath>'
     )
 
 
