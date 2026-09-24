@@ -45,6 +45,17 @@ def embed_jpeg(name: str) -> str:
     return "data:image/jpeg;base64," + base64.b64encode(data).decode()
 
 
+def photo(t: Theme, name: str, x: float, y: float, w: float, h: float, clip: str | None = None) -> str:
+    """An embedded photo filling the box, under the same dark tint as every other photo."""
+    clip_attr = f' clip-path="url(#{clip})"' if clip else ""
+    return (
+        f'<image href="{embed_jpeg(name)}" x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" '
+        f'preserveAspectRatio="xMidYMid slice"{clip_attr}/>'
+        f'<rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h:.1f}" fill="#000" '
+        f'fill-opacity="{t.photo_dim}"{clip_attr}/>'
+    )
+
+
 def wrap(text: str, kind: str, weight: int, size: float, max_w: float) -> list[str]:
     lines, cur = [], ""
     for word in text.split():
@@ -213,9 +224,7 @@ def featured(t: Theme, p: Project, visual: str) -> str:
         body.append(svg)
         css.append(vcss)
     else:
-        body.append(
-            f'<image href="{embed_jpeg(p.image)}" x="0" y="0" width="{PW}" height="{H}" preserveAspectRatio="xMidYMid slice"/>'
-        )
+        body.append(photo(t, p.image, 0, 0, PW, H))
         if visual == "lidar":
             svg, vcss = _lidar(t, *(round(v) for v in _in_frame(*LIDAR_AT, PW, H)))
             body.append(f'<g clip-path="url(#photo)">{svg}</g>')
@@ -267,15 +276,10 @@ def tile(t: Theme, p: Project) -> str:
     if p.images:
         half = W / len(p.images)
         for i, name in enumerate(p.images):
-            body.append(
-                f'<image href="{embed_jpeg(name)}" x="{i * half:.1f}" y="0" width="{half:.1f}" height="{IMG_H}" '
-                'preserveAspectRatio="xMidYMid slice"/>'
-            )
+            body.append(photo(t, name, i * half, 0, half, IMG_H))
         body.append(f'<line x1="{half:.1f}" y1="0" x2="{half:.1f}" y2="{IMG_H}" stroke="{t.bg}" stroke-width="3"/>')
     else:
-        body.append(
-            f'<image href="{embed_jpeg(p.image)}" x="0" y="0" width="{W}" height="{IMG_H}" preserveAspectRatio="xMidYMid slice"/>'
-        )
+        body.append(photo(t, p.image, 0, 0, W, IMG_H))
     body.append(f'<line x1="0" y1="{IMG_H}" x2="{W}" y2="{IMG_H}" stroke="{t.border}"/>')
     x, right = 28, W - 28
     body.append(f'<text x="{x}" y="{IMG_H + 38}" class="eb" font-size="11">{esc(p.eyebrow)}</text>')

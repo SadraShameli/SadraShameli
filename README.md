@@ -33,7 +33,7 @@
 <br>
 
 <p>
-<a href="https://github.com/SadraShameli/sensorhub"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-sensorhub-dark.c33811f8.svg"><img align="top" alt="SensorHub: ESP32 sensor units I design, 3D-print and program. They report climate and loudness to sadra.nl." src="Assets/Readme/project-sensorhub-light.8219f834.svg" width="100%"></picture></a><br>
+<a href="https://github.com/SadraShameli/sensorhub"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-sensorhub-dark.ebb85ce4.svg"><img align="top" alt="SensorHub: ESP32 sensor units I design, 3D-print and program. They report climate and loudness to sadra.nl." src="Assets/Readme/project-sensorhub-light.fd9fb05e.svg" width="100%"></picture></a><br>
 <a href="https://github.com/SadraShameli/sensorhub"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-sensorhub-0-0-dark.616388e2.svg"><img align="top" alt="Source code" src="Assets/Readme/dock/project-sensorhub-0-0-light.6f408c3b.svg" width="50%"></picture></a><a href="https://github.com/SadraShameli/sensorhub/blob/main/Assets/3D%20Models/Sensor%20Unit/Casing%20body.stl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-sensorhub-0-1-dark.15e063f0.svg"><img align="top" alt="Spin the enclosure in 3D" src="Assets/Readme/dock/project-sensorhub-0-1-light.332811c5.svg" width="50%"></picture></a>
 </p>
 
@@ -43,17 +43,17 @@
 </p>
 
 <p>
-<a href="https://github.com/SadraShameli/ProjectAI"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-projectai-dark.a341a70a.svg"><img align="top" alt="Project A.I.: a self-driving robot car with on-device TensorFlow inference, lidar and a 3D-printed chassis" src="Assets/Readme/project-projectai-light.a7fa3a60.svg" width="100%"></picture></a><br>
+<a href="https://github.com/SadraShameli/ProjectAI"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-projectai-dark.675c8c6f.svg"><img align="top" alt="Project A.I.: a self-driving robot car with on-device TensorFlow inference, lidar and a 3D-printed chassis" src="Assets/Readme/project-projectai-light.0065b886.svg" width="100%"></picture></a><br>
 <a href="https://github.com/SadraShameli/ProjectAI"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-projectai-0-0-dark.616388e2.svg"><img align="top" alt="Source code" src="Assets/Readme/dock/project-projectai-0-0-light.6f408c3b.svg" width="50%"></picture></a><a href="https://www.youtube.com/shorts/abyVlfAETG0"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-projectai-0-1-dark.56071f93.svg"><img align="top" alt="Watch it drive" src="Assets/Readme/dock/project-projectai-0-1-light.d3f4d46e.svg" width="50%"></picture></a>
 </p>
 
 <p>
-  <a href="https://sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-sadra-nl-dark.de28ce0c.svg"><img alt="sadra.nl: portfolio, live SensorHub dashboard, trading journal and more" src="Assets/Readme/tile-sadra-nl-light.10ac19c4.svg" width="49%"></picture></a>
-  <a href="https://sadra.nl/prop-calculator"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-prop-calculator-dark.a803371d.svg"><img alt="Prop Calculator: Monte Carlo simulation against each futures prop firm's rules" src="Assets/Readme/tile-prop-calculator-light.2092f4e6.svg" width="49%"></picture></a>
+  <a href="https://sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-sadra-nl-dark.6cbdb53b.svg"><img alt="sadra.nl: portfolio, live SensorHub dashboard, trading journal and more" src="Assets/Readme/tile-sadra-nl-light.628b3b95.svg" width="49%"></picture></a>
+  <a href="https://sadra.nl/prop-calculator"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-prop-calculator-dark.5e49b602.svg"><img alt="Prop Calculator: Monte Carlo simulation against each futures prop firm's rules" src="Assets/Readme/tile-prop-calculator-light.82710632.svg" width="49%"></picture></a>
 </p>
 <p>
-  <a href="https://minomarkt.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-minomarkt-dark.28d7cd8f.svg"><img alt="Mino Markt: WooCommerce storefront for a Persian market and grill in Alkmaar" src="Assets/Readme/tile-minomarkt-light.60377b57.svg" width="49%"></picture></a>
-  <a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-lab-dark.bea91553.svg"><img alt="The early lab: an Arduino Mega robot on a custom PCB and a 3D-printed social robot" src="Assets/Readme/tile-lab-light.0a12b22a.svg" width="49%"></picture></a>
+  <a href="https://minomarkt.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-minomarkt-dark.c90113d4.svg"><img alt="Mino Markt: WooCommerce storefront for a Persian market and grill in Alkmaar" src="Assets/Readme/tile-minomarkt-light.bef403a9.svg" width="49%"></picture></a>
+  <a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-lab-dark.34804fa7.svg"><img alt="The early lab: an Arduino Mega robot on a custom PCB and a 3D-printed social robot" src="Assets/Readme/tile-lab-light.0732df18.svg" width="49%"></picture></a>
 </p>
 
 <br>
@@ -68,7 +68,7 @@
 <br>
 
 <p>
-<a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/youtube-dark.876a1e37.svg"><img align="top" alt="Terminal listing my top YouTube videos: line detection for A.I. (2.7k+ views), range detection with lidar (1.1k+ views) and my self-driving robot's first indoor test (500+ views)" src="Assets/Readme/youtube-light.3457ef22.svg" width="100%"></picture></a><br>
+<a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/youtube-dark.f877cdb0.svg"><img align="top" alt="Terminal listing my top YouTube videos: line detection for A.I. (2.7k+ views), range detection with lidar (1.1k+ views) and my self-driving robot's first indoor test (500+ views)" src="Assets/Readme/youtube-light.7ef0579d.svg" width="100%"></picture></a><br>
 <a href="https://www.youtube.com/watch?v=1142rRZ3rzc"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/youtube-0-0-dark.c7696208.svg"><img align="top" alt="Line detection" src="Assets/Readme/dock/youtube-0-0-light.849d9116.svg" width="25%"></picture></a><a href="https://www.youtube.com/watch?v=_C8PnLK2SWA"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/youtube-0-1-dark.e685180d.svg"><img align="top" alt="Lidar ranging" src="Assets/Readme/dock/youtube-0-1-light.e2d2e5d1.svg" width="25%"></picture></a><a href="https://www.youtube.com/shorts/abyVlfAETG0"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/youtube-0-2-dark.82e49394.svg"><img align="top" alt="Indoor test drive" src="Assets/Readme/dock/youtube-0-2-light.457a3546.svg" width="25%"></picture></a><a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/youtube-0-3-dark.960ccf0c.svg"><img align="top" alt="Channel" src="Assets/Readme/dock/youtube-0-3-light.85ca5fac.svg" width="25%"></picture></a>
 </p>
 

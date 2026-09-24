@@ -10,7 +10,7 @@ import math
 import re
 from dataclasses import dataclass
 
-from cards import embed_jpeg, wrap
+from cards import photo, wrap
 from dock import docked
 from svg import MONO, MONO_ADVANCE, ROOT, SANS, Theme, card_frame, clip_card, document, esc, font_css
 
@@ -142,8 +142,7 @@ def youtube(t: Theme) -> str:
         parts = [
             f'<g class="{cls}">',
             f'<clipPath id="th{i}"><rect x="{x}" y="{top}" width="{THUMB_W}" height="{THUMB_H}" rx="10"/></clipPath>',
-            f'<image href="{embed_jpeg(v.thumb)}" x="{x}" y="{top}" width="{THUMB_W}" height="{THUMB_H}" '
-            f'preserveAspectRatio="xMidYMid slice" clip-path="url(#th{i})"/>',
+            photo(t, v.thumb, x, top, THUMB_W, THUMB_H, clip=f"th{i}"),
             f'<rect x="{x + 0.5}" y="{top + 0.5}" width="{THUMB_W - 1}" height="{THUMB_H - 1}" rx="10" '
             f'fill="none" stroke="{t.border}"/>',
             f'<circle cx="{pcx}" cy="{pcy}" r="19" fill="#000" fill-opacity=".6" stroke="#fff" stroke-opacity=".5"/>',

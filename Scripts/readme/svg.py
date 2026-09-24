@@ -37,6 +37,7 @@ class Theme:
     iso_edge: str
     screen: str
     screen_text: str
+    photo_dim: float  # opacity of the black tint over every photo
 
 
 DARK = Theme(
@@ -58,6 +59,7 @@ DARK = Theme(
     iso_edge="#3a3a3a",
     screen="#020617",
     screen_text="#7dd3fc",
+    photo_dim=0.35,
 )
 
 LIGHT = Theme(
@@ -79,6 +81,7 @@ LIGHT = Theme(
     iso_edge="#a3a3a3",
     screen="#0f172a",
     screen_text="#7dd3fc",
+    photo_dim=0.2,
 )
 
 THEMES = (DARK, LIGHT)
