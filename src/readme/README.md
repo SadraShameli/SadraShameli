@@ -14,8 +14,7 @@ On the first run uv fetches Python 3.14 and the dev group (Pillow, only used by 
 | `cli.py` | the `readme` command: builds every card, deletes stale ones, repoints the README |
 | `hero.py` | the banner: the `whoami` typo gag and the isometric SensorHub with its firmware's LED pattern |
 | `intro.py` | the intro: the end-to-end pipeline and the by day / by night panels |
-| `about.py` | `neofetch --stack`: the `>_` LED matrix with the tech stack chips beside it |
-| `stack.py` | the tech stack chip rows drawn inside the `neofetch` card (edit `STACK`) |
+| `btop.py` | `btop --user sadra`: a system monitor of me, with a scrolling LED cpu graph, mem gauges and the projects as processes (edit `MEM`, `PROCS`) |
 | `cards.py` | project cards and tiles (edit `FEATURED` / `TILES` to change the copy) |
 | `terminal.py` | the YouTube and documents terminals (edit `VIDEOS`, `DOCUMENTS`) |
 | `dock.py` | the link buttons that form the bottom edge of a card (edit `DOCKS`); `readme_html()` prints the matching README markup |

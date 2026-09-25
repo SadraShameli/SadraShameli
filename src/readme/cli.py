@@ -13,7 +13,7 @@ import hashlib
 import re
 from pathlib import Path
 
-from .about import about
+from .btop import btop
 from .cards import all_cards
 from .dock import all_docks
 from .footer import footer
@@ -31,7 +31,7 @@ def build(out: Path = ASSETS) -> None:
         files = {
             "hero": hero(t),
             "intro": intro(t),
-            "about": about(t),
+            "btop": btop(t),
             "youtube": youtube(t),
             "documents": documents(t),
             "footer": footer(t),

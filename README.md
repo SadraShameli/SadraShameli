@@ -25,8 +25,8 @@
 
 <p>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/about-dark.84ddd448.svg">
-  <img align="top" alt="neofetch --stack: my tech stack. Web: TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, tRPC, TanStack Query, Zod, Better Auth. Backend: PHP, WordPress, WooCommerce, Twig, .NET, Node.js, Bun. Data: PostgreSQL, Drizzle, MySQL, Redis. Firmware: C++, ESP-IDF, FreeRTOS, Arduino, PlatformIO. Quant &amp; ML: Python, PyTorch, NumPy, Pandas, Pydantic, TensorFlow. Ship it: Docker, GitHub Actions, Vercel, Sentry, Vitest, Playwright, Git. Make it: Fusion 360, Blender, PrusaSlicer, Prusa MK3S+, Prusa Mini+, Vertex K8400" src="Assets/Readme/about-light.ed4dfc2e.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/btop-dark.b93eaddc.svg">
+  <img align="top" alt="btop --user sadra, a system monitor of me: a scrolling cpu graph; mem gauges for coffee 98%, focus 87%, ideas 112% and free time 3%; and the processes running: tradingbot live with 4 strategies, WordPress for 15+ sites at Nobears, sensorhub recording when it gets loud, agents in parallel, sadra.nl, a Prusa printing an enclosure, and a starved sleep." src="Assets/Readme/btop-light.8e5e3b20.svg" width="100%">
 </picture>
 </p>
 

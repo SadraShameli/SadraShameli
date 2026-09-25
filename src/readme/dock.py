@@ -6,9 +6,11 @@ footer: the card is drawn with an open bottom and the last row of buttons
 carries the bottom border and corners.
 """
 
+import json
 from dataclasses import dataclass
+from functools import lru_cache
 
-from .stack import icons
+from .paths import ICONS
 from .svg import MONO, Theme, document, esc, font_css, measure
 
 DOCK_H = 52
@@ -79,6 +81,12 @@ DOCKS: dict[str, tuple[int, list[list[Link]]]] = {
         ],
     ]),
 }
+
+@lru_cache(maxsize=None)
+def icons() -> dict[str, str]:
+    """simple-icons paths (CC0) for the button glyphs."""
+    return json.loads(ICONS.read_text())
+
 
 # LinkedIn isn't in simple-icons any more; this is its well-known 24x24 glyph
 _LINKEDIN = (
