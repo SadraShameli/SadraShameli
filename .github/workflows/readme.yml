@@ -1,0 +1,76 @@
+name: README
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+    workflow_dispatch:
+
+concurrency:
+    group: readme-${{ github.ref }}
+    cancel-in-progress: false
+
+defaults:
+    run:
+        working-directory: generator
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
+
+            - name: Install uv and Python 3.14
+              uses: astral-sh/setup-uv@v7
+              with:
+                  python-version: '3.14'
+                  enable-cache: true
+                  cache-dependency-glob: generator/uv.lock
+
+            - name: Verify lock file is up to date
+              run: uv lock --check
+
+            - name: Sync dependencies
+              run: uv sync --frozen
+
+            - name: pre-commit (commit-stage hooks)
+              run: uv run pre-commit run --all-files --show-diff-on-failure
+
+            - name: pre-commit (push-stage hooks)
+              run: uv run pre-commit run --all-files --hook-stage pre-push --show-diff-on-failure
+
+            - name: Run tests
+              run: uv run --frozen pytest
+
+    build:
+        needs: lint
+        if: github.event_name != 'pull_request'
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/checkout@v7
+
+            - name: Install uv and Python 3.14
+              uses: astral-sh/setup-uv@v7
+              with:
+                  python-version: '3.14'
+                  enable-cache: true
+                  cache-dependency-glob: generator/uv.lock
+
+            - name: Build the cards
+              run: uv run --frozen --no-dev readme
+
+            - name: Commit anything that changed
+              working-directory: .
+              run: |
+                  git add -A Assets/Readme README.md
+                  if git diff --cached --quiet; then
+                      echo "README is already up to date"
+                      exit 0
+                  fi
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                  git commit -m "Rebuild the README cards"
+                  git push

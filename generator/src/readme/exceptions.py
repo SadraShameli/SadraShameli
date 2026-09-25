@@ -1,0 +1,2 @@
+class ReadmeError(Exception):
+    pass
