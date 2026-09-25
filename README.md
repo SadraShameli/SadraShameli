@@ -33,7 +33,7 @@
 <br>
 
 <p>
-<a href="Documents/Resume%20-%20Sadra%202.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-tradingbot-dark.b3dfdd72.svg"><img align="top" alt="TradingBot: the modular quant framework I trade my own capital with. Private repository." src="Assets/Readme/project-tradingbot-light.1c9e66af.svg" width="100%"></picture></a><br>
+<a href="Documents/Resume%20-%20Sadra%202.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-tradingbot-dark.33a5aea0.svg"><img align="top" alt="TradingBot: the modular quant framework I trade my own capital with. Private repository." src="Assets/Readme/project-tradingbot-light.ff91d8e1.svg" width="100%"></picture></a><br>
 <a href="Documents/Resume%20-%20Sadra%202.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-tradingbot-0-0-dark.1e3dc2dd.svg"><img align="top" alt="The quant resume" src="Assets/Readme/dock/project-tradingbot-0-0-light.4317b900.svg" width="50%"></picture></a><a href="mailto:sadra.shameli1@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-tradingbot-0-1-dark.3c62e16f.svg"><img align="top" alt="Ask me for a walkthrough" src="Assets/Readme/dock/project-tradingbot-0-1-light.675dfba6.svg" width="50%"></picture></a>
 </p>
 

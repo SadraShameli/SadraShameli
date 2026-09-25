@@ -21,6 +21,7 @@ from .svg import (
     esc,
     font_css,
     measure,
+    pct,
 )
 
 
@@ -201,53 +202,102 @@ def _lidar(t: Theme, cx: float, cy: float) -> tuple[str, str]:
     return f"<defs>{defs}</defs>{rings}{wedge}{''.join(hits)}", css
 
 
-def _pipeline(t: Theme, x: float, y: float, w: float, h: float) -> tuple[str, str]:
-    """TradingBot's layers as a flow: signals travel down, validators reject some."""
-    stages = ["market data", "features", "pytorch scorer", "validators", "risk engine", "broker api"]
-    pw, ph = 196, 30
-    gap = (h - 60 - len(stages) * ph) / (len(stages) - 1)
-    cx = x + w / 2
-    ys = [y + 30 + i * (ph + gap) for i in range(len(stages))]
+STAGES = ["data", "feat", "score", "check", "risk", "order"]
+
+# TradingBot's log as it works a few bars: (time, stage, [(text, tone)]). Illustrative, not real trades.
+# tone: "txt" plain, "dim" muted, "ok" green, "bad" red
+TRADE_LOG = [
+    ("14:30:00", "data", [("NQ 1m bar closed", "txt")]),
+    ("14:30:00", "feat", [("42 features", "txt"), (" · from cache", "dim")]),
+    ("14:30:00", "score", [("long ", "txt"), ("0.71", "ok"), (" · pytorch", "dim")]),
+    ("14:30:00", "check", [("regime ", "dim"), ("ok", "ok"), (" · spread ", "dim"), ("ok", "ok")]),
+    ("14:30:00", "risk", [("size 2 · kill switch armed", "txt")]),
+    ("14:30:01", "order", [("buy 2 NQ · ", "txt"), ("filled", "ok")]),
+    ("14:31:00", "data", [("ES 5m bar closed", "txt")]),
+    ("14:31:00", "score", [("short ", "txt"), ("0.38", "dim")]),
+    ("14:31:00", "check", [("regime ", "dim"), ("fail", "bad"), (" → skip", "bad")]),
+    ("14:32:00", "data", [("NQ 1m bar closed", "txt")]),
+    ("14:32:00", "score", [("long ", "txt"), ("0.66", "ok")]),
+    ("14:32:00", "check", [("news window ", "dim"), ("fail", "bad"), (" → skip", "bad")]),
+    ("14:33:00", "risk", [("drawdown within limits", "txt")]),
+    ("14:33:00", "order", [("trail stop · ", "txt"), ("moved", "ok")]),
+]
+
+
+def _tradelog(t: Theme, x: float, y: float, w: float, h: float) -> tuple[str, str]:
+    """TradingBot at work: its pipeline as a strip of stages, and its log scrolling by."""
+    fs, lh = 11.5, 22
+    cw = fs * 0.6
+    stage_color = {"data": t.muted, "feat": t.muted, "score": t.text, "check": t.yellow,
+                   "risk": t.yellow, "order": t.green}
+    tone_color = {"txt": t.text, "dim": t.muted, "ok": t.green, "bad": t.red}
     parts = [dot_bg(t, x, y, w, h)]
-    parts.append(
-        f'<line x1="{cx}" y1="{ys[0] + ph / 2}" x2="{cx}" y2="{ys[-1] + ph / 2}" stroke="{t.border}" stroke-width="2"/>'
-    )
-    for i, (name, sy) in enumerate(zip(stages, ys)):
-        accent = t.yellow if name == "validators" else (t.red if name == "risk engine" else t.text)
-        parts.append(
-            f'<rect x="{cx - pw / 2}" y="{sy}" width="{pw}" height="{ph}" rx="{ph / 2}" fill="{t.panel}" '
-            f'stroke="{t.border}"/>'
-            f'<circle cx="{cx - pw / 2 + 16}" cy="{sy + ph / 2}" r="3.5" fill="{accent}"/>'
-            f'<text x="{cx - pw / 2 + 30}" y="{sy + ph / 2 + 4.5}" font-family="{MONO}" font-size="13" '
-            f'fill="{t.text}">{esc(name)}</text>'
-        )
-    # packets: 0..5 go the whole way, #2 and #4 are rejected at the validators
-    v_y = ys[3] + ph / 2
-    top, bottom = ys[0] + ph / 2, ys[-1] + ph / 2
     css = []
-    period = 6.0
-    for i in range(6):
-        rejected = i in (1, 4)
-        delay = i * 1.0
-        if rejected:
-            frames = (
-                f"0%{{transform:translate(0,0);opacity:0}}4%{{opacity:1}}"
-                f"45%{{transform:translate(0,{v_y - top:.1f}px);fill:{t.yellow}}}"
-                f"55%{{transform:translate(0,{v_y - top:.1f}px);fill:{t.red};opacity:1}}"
-                f"75%{{transform:translate({pw / 2 + 40}px,{v_y - top:.1f}px);fill:{t.red};opacity:0}}"
-                f"100%{{opacity:0}}"
-            )
-        else:
-            frames = (
-                f"0%{{transform:translate(0,0);opacity:0}}4%{{opacity:1}}"
-                f"85%{{transform:translate(0,{bottom - top:.1f}px);opacity:1;fill:{t.green}}}"
-                f"100%{{transform:translate(0,{bottom - top:.1f}px);opacity:0;fill:{t.green}}}"
-            )
-        css.append(
-            f"@keyframes p{i}{{{frames}}}"
-            f"#p{i}{{animation:p{i} {period}s linear {delay}s infinite both;fill:{t.text}}}"
+
+    # header: a live dot, the command, the strategy count
+    parts.append(
+        f'<circle id="live" cx="{x + 24}" cy="{y + 26}" r="4" fill="{t.green}"/>'
+        f'<text x="{x + 36}" y="{y + 30}" font-family="{MONO}" font-size="12.5" font-weight="600" '
+        f'fill="{t.text}">tradingbot --live</text>'
+        f'<text x="{x + w - 18}" y="{y + 30}" font-family="{MONO}" font-size="11.5" text-anchor="end" '
+        f'fill="{t.muted}">4 strategies</text>'
+    )
+    css.append("@keyframes live{0%,100%{opacity:1}50%{opacity:.25}}#live{animation:live 1.6s ease-in-out infinite}")
+
+    # the pipeline as a strip; the active stage steps along it
+    sx, sy, sgap = x + 18, y + 46, 5
+    sw = (w - 36 - sgap * (len(STAGES) - 1)) / len(STAGES)
+    step = 0.45
+    for i, stage in enumerate(STAGES):
+        cx = sx + i * (sw + sgap)
+        parts.append(
+            f'<rect x="{cx:.1f}" y="{sy}" width="{sw:.1f}" height="20" rx="5" fill="{t.bg}" stroke="{t.border}"/>'
+            f'<rect class="st{i}" x="{cx:.1f}" y="{sy}" width="{sw:.1f}" height="20" rx="5" '
+            f'fill="{stage_color[stage]}" fill-opacity=".16" stroke="{stage_color[stage]}" stroke-opacity=".6" '
+            f'opacity="0"/>'
+            f'<text x="{cx + sw / 2:.1f}" y="{sy + 14}" font-family="{MONO}" font-size="10.5" text-anchor="middle" '
+            f'fill="{stage_color[stage]}">{stage}</text>'
         )
-        parts.append(f'<circle id="p{i}" cx="{cx}" cy="{top}" r="5"/>')
+        period = step * len(STAGES)
+        css.append(
+            f"@keyframes st{i}{{0%{{opacity:0}}{pct(i * step, period)}{{opacity:1}}"
+            f"{pct((i + 1) * step, period)}{{opacity:0}}100%{{opacity:0}}}}"
+            f".st{i}{{animation:st{i} {period:.2f}s step-end infinite}}"
+        )
+
+    # the log, twice over so it can scroll forever
+    top = sy + 34
+    lines = []
+    for n in range(len(TRADE_LOG) * 2):
+        time, stage, runs = TRADE_LOG[n % len(TRADE_LOG)]
+        ly = top + 16 + n * lh
+        tag_w = 5 * cw + 10
+        tspans = "".join(f'<tspan fill="{tone_color[tone]}">{esc(text)}</tspan>' for text, tone in runs)
+        lines.append(
+            f'<text x="{x + 18}" y="{ly}" font-family="{MONO}" font-size="{fs}" fill="{t.faint}">{time}</text>'
+            f'<rect x="{x + 18 + 9 * cw:.1f}" y="{ly - 11}" width="{tag_w:.1f}" height="15" rx="4" '
+            f'fill="{stage_color[stage]}" fill-opacity=".12"/>'
+            f'<text x="{x + 18 + 9 * cw + tag_w / 2:.1f}" y="{ly}" font-family="{MONO}" font-size="{fs - 1}" '
+            f'text-anchor="middle" fill="{stage_color[stage]}">{stage}</text>'
+            f'<text x="{x + 18 + 9 * cw + tag_w + 10:.1f}" y="{ly}" font-family="{MONO}" font-size="{fs}" '
+            f'xml:space="preserve">{tspans}</text>'
+        )
+    cycle = len(TRADE_LOG) * lh
+    css.append(
+        f"@keyframes tlog{{to{{transform:translateY(-{cycle}px)}}}}"
+        f".tlog{{animation:tlog {len(TRADE_LOG) * 1.15:.1f}s linear infinite}}"
+    )
+    log_h = y + h - top
+    parts.append(
+        "<defs>"
+        f'<clipPath id="logclip"><rect x="{x}" y="{top}" width="{w}" height="{log_h}"/></clipPath>'
+        f'<linearGradient id="logfade" x1="0" y1="0" x2="0" y2="1">'
+        f'<stop offset="0" stop-color="{t.panel}"/><stop offset=".14" stop-color="{t.panel}" stop-opacity="0"/>'
+        f'<stop offset=".82" stop-color="{t.panel}" stop-opacity="0"/><stop offset="1" stop-color="{t.panel}"/>'
+        "</linearGradient></defs>"
+        f'<g clip-path="url(#logclip)"><g class="tlog">{"".join(lines)}</g></g>'
+        f'<rect x="{x}" y="{top}" width="{w}" height="{log_h}" fill="url(#logfade)"/>'
+    )
     return "".join(parts), "".join(css)
 
 
@@ -298,8 +348,8 @@ def featured(t: Theme, p: Project, visual: str) -> str:
         '<g clip-path="url(#clip)">',
     ]
 
-    if visual == "pipeline":
-        svg, vcss = _pipeline(t, 0, 0, PW, H)
+    if visual == "log":
+        svg, vcss = _tradelog(t, 0, 0, PW, H)
         body.append(svg)
         css.append(vcss)
     else:
@@ -313,13 +363,14 @@ def featured(t: Theme, p: Project, visual: str) -> str:
             body.append(_chip(t, 16, H - 38, "LIDAR SCAN", "#4ade80", blink=True))
         elif visual == "leds":
             body.append(_chip(t, 16, H - 38, "ESP32 · FREERTOS · 3D PRINTED", "#22c55e", blink=True))
-    # seam between photo and content
-    body.append(
-        f'<defs><linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="{t.bg}" stop-opacity="0"/>'
-        f'<stop offset="1" stop-color="{t.bg}"/></linearGradient></defs>'
-        f'<rect x="{PW - 70}" y="0" width="71" height="{H}" fill="url(#fade)"/>'
-        f'<line x1="{PW}" y1="0" x2="{PW}" y2="{H}" stroke="{t.border}"/>'
-    )
+    # seam between the visual and the content; photos also fade into it
+    if visual != "log":
+        body.append(
+            f'<defs><linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="{t.bg}" stop-opacity="0"/>'
+            f'<stop offset="1" stop-color="{t.bg}"/></linearGradient></defs>'
+            f'<rect x="{PW - 70}" y="0" width="71" height="{H}" fill="url(#fade)"/>'
+        )
+    body.append(f'<line x1="{PW}" y1="0" x2="{PW}" y2="{H}" stroke="{t.border}"/>')
 
     x, right = PW + 44, W - 40
     body.append(f'<text x="{x}" y="58" class="eb">{esc(p.eyebrow)}</text>')
@@ -406,7 +457,7 @@ FEATURED = [
             ),
             link="→ private repo · happy to give you a walkthrough",
         ),
-        "pipeline",
+        "log",
     ),
     (
         Project(
