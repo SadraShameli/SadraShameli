@@ -99,31 +99,26 @@ def plus(
     )
 
 
-def corner_marks(
-    x: float,
-    y: float,
-    w: float,
-    h: float,
-    corners: str = "tl tr bl br",
-    inset: float = 16,
-) -> str:
-    spots = {
-        "tl": (x + inset, y + inset),
-        "tr": (x + w - inset, y + inset),
-        "bl": (x + inset, y + h - inset),
-        "br": (x + w - inset, y + h - inset),
-    }
-    return "".join(
-        plus(*spots[c], "#fff", opacity=0.65) for c in corners.split()
-    )
-
-
-def showcase(t: Theme, name: str, w: float, h: float) -> str:
-    """A website screenshot, Vercel-template style: inset in a frame on a guide grid,
-    under a soft spotlight, running off the bottom edge."""
+def shot_box(
+    w: float, h: float, ratio: float
+) -> tuple[float, float, float, float]:
+    """Where a showcase puts its photo: inset on three sides, always running off the bottom."""
     sx, sy = 36, 30
     sw = w - 2 * sx
-    sh = sw / 1.6
+    return sx, sy, sw, max(sw / ratio, h - sy + 20)
+
+
+def showcase(
+    t: Theme,
+    name: str,
+    w: float,
+    h: float,
+    ratio: float = 1.6,
+    overlay: str = "",
+) -> str:
+    """A photo, Vercel-template style: inset in a frame on a guide grid, under a soft
+    spotlight, running off the bottom edge. `overlay` is drawn over the photo, clipped to it."""
+    sx, sy, sw, sh = shot_box(w, h, ratio)
     spot, spot_op = ("#fff", 0.1) if t.name == "dark" else ("#000", 0.05)
     frame = ("#fff", 0.16) if t.name == "dark" else ("#000", 0.14)
     parts = [
@@ -155,6 +150,7 @@ def showcase(t: Theme, name: str, w: float, h: float) -> str:
             f'fill-opacity=".45" filter="url(#shadow)"/>'
         ),
         photo(t, name, sx, sy, sw, sh, clip="shot", grain=False),
+        f'<g clip-path="url(#shot)">{overlay}</g>' if overlay else "",
         (
             f'<rect x="{sx + 0.5}" y="{sy + 0.5}" width="{sw - 1}" height="{sh + 20:.1f}" rx="10" fill="none" '
             f'stroke="{frame[0]}" stroke-opacity="{frame[1]}"/>'
@@ -442,39 +438,26 @@ def featured(t: Theme, p: Project, visual: str) -> str:
         css.append(vcss)
     else:
         assert p.image, f"{p.slug} needs a photo for the {visual} visual"
-        body.append(photo(t, p.image, 0, 0, PW, H, fade_to="#000"))
-        body.append(corner_marks(0, 0, PW, H, "tl tr"))
+        ratio = PHOTO_W / PHOTO_H
+        sx, sy, sw, sh = shot_box(PW, H, ratio)
+        overlay = ""
         if visual == "lidar":
-            svg, vcss = _lidar(
-                t, *(round(v) for v in _in_frame(*LIDAR_AT, PW, H))
-            )
-            body.append(f'<g clip-path="url(#photo)">{svg}</g>')
-            body.insert(
-                0,
-                f'<defs><clipPath id="photo"><rect width="{PW}" height="{H}"/></clipPath></defs>',
-            )
+            cx, cy = _in_frame(*LIDAR_AT, sw, sh)
+            overlay, vcss = _lidar(t, round(sx + cx), round(sy + cy))
             css.append(vcss)
-            body.append(
-                _chip(t, 16, H - 38, "LIDAR SCAN", "#4ade80", blink=True)
+            overlay += _chip(
+                t, sx + 12, H - 38, "LIDAR SCAN", "#4ade80", blink=True
             )
         elif visual == "leds":
-            body.append(
-                _chip(
-                    t,
-                    16,
-                    H - 38,
-                    "ESP32 · FREERTOS · 3D PRINTED",
-                    "#22c55e",
-                    blink=True,
-                )
+            overlay = _chip(
+                t,
+                sx + 12,
+                H - 38,
+                "ESP32 · FREERTOS · 3D PRINTED",
+                "#22c55e",
+                blink=True,
             )
-    # seam between the visual and the content; photos also fade into it
-    if visual != "log":
-        body.append(
-            f'<defs><linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="{t.bg}" stop-opacity="0"/>'
-            f'<stop offset="1" stop-color="{t.bg}"/></linearGradient></defs>'
-            f'<rect x="{PW - 70}" y="0" width="71" height="{H}" fill="url(#fade)"/>'
-        )
+        body.append(showcase(t, p.image, PW, H, ratio, overlay))
     body.append(
         f'<line x1="{PW}" y1="0" x2="{PW}" y2="{H}" stroke="{t.border}"/>'
     )

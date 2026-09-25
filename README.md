@@ -38,12 +38,12 @@
 </p>
 
 <p>
-<a href="https://github.com/SadraShameli/sensorhub"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-sensorhub-dark.b198032c.svg"><img align="top" alt="SensorHub: ESP32 sensor units I design, 3D-print and program. They report climate and loudness to sadra.nl." src="Assets/Readme/project-sensorhub-light.ce8f69c8.svg" width="100%"></picture></a><br>
+<a href="https://github.com/SadraShameli/sensorhub"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-sensorhub-dark.7bc33f7f.svg"><img align="top" alt="SensorHub: ESP32 sensor units I design, 3D-print and program. They report climate and loudness to sadra.nl." src="Assets/Readme/project-sensorhub-light.ffd23b8e.svg" width="100%"></picture></a><br>
 <a href="https://github.com/SadraShameli/sensorhub"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-sensorhub-0-0-dark.616388e2.svg"><img align="top" alt="Source code" src="Assets/Readme/dock/project-sensorhub-0-0-light.6f408c3b.svg" width="50%"></picture></a><a href="https://github.com/SadraShameli/sensorhub/blob/main/Assets/3D%20Models/Sensor%20Unit/Casing%20body.stl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-sensorhub-0-1-dark.15e063f0.svg"><img align="top" alt="Spin the enclosure in 3D" src="Assets/Readme/dock/project-sensorhub-0-1-light.332811c5.svg" width="50%"></picture></a>
 </p>
 
 <p>
-<a href="https://github.com/SadraShameli/ProjectAI"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-projectai-dark.ab17a224.svg"><img align="top" alt="Project A.I.: a self-driving robot car with on-device TensorFlow inference, lidar and a 3D-printed chassis" src="Assets/Readme/project-projectai-light.7bdfb752.svg" width="100%"></picture></a><br>
+<a href="https://github.com/SadraShameli/ProjectAI"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/project-projectai-dark.41d6f42a.svg"><img align="top" alt="Project A.I.: a self-driving robot car with on-device TensorFlow inference, lidar and a 3D-printed chassis" src="Assets/Readme/project-projectai-light.3bef3a36.svg" width="100%"></picture></a><br>
 <a href="https://github.com/SadraShameli/ProjectAI"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-projectai-0-0-dark.616388e2.svg"><img align="top" alt="Source code" src="Assets/Readme/dock/project-projectai-0-0-light.6f408c3b.svg" width="50%"></picture></a><a href="https://www.youtube.com/shorts/abyVlfAETG0"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/project-projectai-0-1-dark.56071f93.svg"><img align="top" alt="Watch it drive" src="Assets/Readme/dock/project-projectai-0-1-light.d3f4d46e.svg" width="50%"></picture></a>
 </p>
 
