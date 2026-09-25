@@ -1,16 +1,19 @@
 [project]
 name = "readme"
 version = "0.1.0"
-description = "Draws the SVG cards for my GitHub profile README"
+description = "Draws my GitHub profile README and every card on it"
 readme = "README.md"
 authors = [
     { name = "SadraShameli", email = "sadra.shameli1@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "click>=8.5.0",
+    "pillow>=12.3.0",
+]
 
 [project.scripts]
-readme = "readme:main"
+readme = "readme.main:main"
 
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
@@ -18,8 +21,11 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
-    "pillow>=12.3.0",
     "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "pytest-random-order>=1.2.0",
+    "pytest-timeout>=2.4.0",
+    "pytest-xdist>=3.8.0",
     "ruff>=0.16.9",
     "ty>=0.0.84",
 ]
@@ -47,8 +53,6 @@ extend-select = [
     "W",
 ]
 ignore = [
-    # the drawing helpers take x, y, w, h positionally, like SVG itself
-    "PLR0917",
     "E501",
     "PLC0415",
     "PLR0911",
@@ -57,3 +61,10 @@ ignore = [
     "PLR0915",
     "PLR2004",
 ]
+
+[tool.ruff.analyze]
+detect-string-imports = true
+
+[tool.pytest.ini_options]
+addopts = "--random-order -n auto --timeout=120"
+testpaths = ["tests"]

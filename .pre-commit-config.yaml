@@ -1,4 +1,3 @@
-# the python lives in generator/, the rest is output (Assets/Readme, README.md) and media
 exclude: ^(Assets|Documents|Images)/
 default_install_hook_types: [pre-push]
 repos:

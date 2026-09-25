@@ -40,6 +40,9 @@ jobs:
             - name: pre-commit (push-stage hooks)
               run: uv run pre-commit run --all-files --hook-stage pre-push --show-diff-on-failure
 
+            - name: Run tests
+              run: uv run --frozen pytest
+
     build:
         needs: lint
         if: github.event_name != 'pull_request'
@@ -59,7 +62,6 @@ jobs:
             - name: Build the cards
               run: uv run --frozen --no-dev readme
 
-            # pushes made with GITHUB_TOKEN don't start another run, so this can't loop
             - name: Commit anything that changed
               working-directory: .
               run: |
