@@ -6,10 +6,8 @@ unit whose OLED cycles through the real firmware's pages and whose LEDs
 blink the way the firmware blinks them (yellow = connecting, green = upload).
 """
 
-from __future__ import annotations
-
-from dock import docked
-from svg import (
+from .dock import docked
+from .svg import (
     DISPLAY,
     MONO,
     MONO_ADVANCE,

@@ -3,17 +3,13 @@
 Everything here is stdlib-only, so building needs nothing installed.
 """
 
-from __future__ import annotations
-
 import base64
 import json
 from dataclasses import dataclass
 from functools import lru_cache
-from pathlib import Path
 from xml.sax.saxutils import escape
 
-ROOT = Path(__file__).resolve().parents[2]
-FONTS = ROOT / "Scripts" / "fonts"
+from .paths import FONTS
 
 
 @dataclass(frozen=True)

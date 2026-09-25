@@ -3,10 +3,8 @@
 Plays once: types the command, lights the matrix, then the stack chips rise in.
 """
 
-from __future__ import annotations
-
-from stack import STACK, stack_rows, stack_summary
-from svg import MONO, MONO_ADVANCE, Theme, card_frame, clip_card, document, font_css
+from .stack import STACK, stack_rows, stack_summary
+from .svg import MONO, MONO_ADVANCE, Theme, card_frame, clip_card, document, font_css
 
 W = 1000
 FS = 15

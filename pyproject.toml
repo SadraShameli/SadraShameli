@@ -1,0 +1,22 @@
+[project]
+name = "readme"
+version = "0.1.0"
+description = "Draws the SVG cards for my GitHub profile README"
+readme = "src/readme/README.md"
+authors = [
+    { name = "SadraShameli", email = "sadra.shameli1@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+readme = "readme.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pillow>=12.3.0",
+]

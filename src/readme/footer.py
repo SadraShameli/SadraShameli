@@ -1,8 +1,6 @@
 """A terminal that logs out politely. Plays once."""
 
-from __future__ import annotations
-
-from svg import MONO, MONO_ADVANCE, Theme, card_frame, clip_card, document, esc, font_css
+from .svg import MONO, MONO_ADVANCE, Theme, card_frame, clip_card, document, esc, font_css
 
 W, H, FS = 1000, 132, 16
 CW = FS * MONO_ADVANCE

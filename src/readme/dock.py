@@ -6,12 +6,10 @@ footer: the card is drawn with an open bottom and the last row of buttons
 carries the bottom border and corners.
 """
 
-from __future__ import annotations
-
 from dataclasses import dataclass
 
-from stack import icons
-from svg import MONO, Theme, document, esc, font_css, measure
+from .stack import icons
+from .svg import MONO, Theme, document, esc, font_css, measure
 
 DOCK_H = 52
 CARD_W = 1000
@@ -76,7 +74,7 @@ DOCKS: dict[str, tuple[int, list[list[Link]]]] = {
         Link("IMA-ADPCM encoder", "https://github.com/SadraShameli/sensorhub/blob/main/include/AdpcmRecorder.h", "github"),
         Link("Service kernel", "https://github.com/SadraShameli/sensorhub/blob/main/src/core/Kernel.cpp", "github"),
         Link("sadra.nl source", "https://github.com/SadraShameli/sadra.nl", "github"),
-        Link("Scripts/readme", "Scripts/readme", "github"),
+        Link("src/readme", "src/readme", "github"),
     ]]),
     "sh-robot": (14, [[
         Link("sadra.nl", "https://sadra.nl", "globe"),

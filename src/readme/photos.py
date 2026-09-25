@@ -1,17 +1,11 @@
-"""One-off: crop/resize photos into the exact frames the cards use.
+"""`uv run readme photos`: crop and resize the photos into the exact frames the cards use.
 
-Needs Pillow (the card builder itself is stdlib-only and just embeds the
-results):  pip install pillow && python Scripts/readme/prep_images.py
+Only needed after adding or changing a photo. It needs Pillow, which is in the dev
+dependency group; drawing the cards needs nothing beyond the standard library.
 """
 
-from __future__ import annotations
+from .paths import CARD_IMAGES, ROOT
 
-from pathlib import Path
-
-from PIL import Image, ImageOps
-
-ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "Images" / "Cards"
 SCALE = 1.5  # retina-ish without bloating the SVGs
 
 # name: (source, frame w, frame h, focus x, focus y)  focus = 0..1 in the source
@@ -42,16 +36,17 @@ def crop_box(src_w: int, src_h: int, w: int, h: int, fx: float, fy: float) -> tu
     return left, top, left + cw, top + ch
 
 
-def main() -> None:
-    OUT.mkdir(parents=True, exist_ok=True)
+def crop_all() -> None:
+    try:
+        from PIL import Image, ImageOps
+    except ImportError:
+        raise SystemExit("readme photos: Pillow is missing, run `uv sync` to install the dev group") from None
+
+    CARD_IMAGES.mkdir(parents=True, exist_ok=True)
     for name, (src, w, h, fx, fy) in JOBS.items():
         im = ImageOps.exif_transpose(Image.open(ROOT / src)).convert("RGB")
         box = crop_box(*im.size, w, h, fx, fy)
         im = im.crop(box).resize((round(w * SCALE), round(h * SCALE)), Image.LANCZOS)
-        path = OUT / f"{name}.jpg"
+        path = CARD_IMAGES / f"{name}.jpg"
         im.save(path, quality=74, optimize=True, progressive=True)
-        print(f"{name:16} crop={box} -> {path.stat().st_size // 1024} KB")
-
-
-if __name__ == "__main__":
-    main()
+        print(f"{name:20} crop={box} -> {path.stat().st_size // 1024} KB")

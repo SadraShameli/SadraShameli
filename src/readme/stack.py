@@ -2,13 +2,11 @@
 
 Drawn inside the `neofetch --stack` terminal (about.py)."""
 
-from __future__ import annotations
-
 import json
 from functools import lru_cache
-from pathlib import Path
 
-from svg import MONO, SANS, Theme, esc, measure
+from .paths import ICONS
+from .svg import MONO, SANS, Theme, esc, measure
 
 # (label, simple-icons slug or None)
 STACK: list[tuple[str, list[tuple[str, str | None]]]] = [
@@ -39,9 +37,6 @@ STACK: list[tuple[str, list[tuple[str, str | None]]]] = [
         ("Prusa MK3S+", None), ("Prusa Mini+", None), ("Vertex K8400", None),
     ]),
 ]
-
-ICONS = Path(__file__).with_name("icons.json")
-
 
 @lru_cache(maxsize=None)
 def icons() -> dict[str, str]:

@@ -1,34 +1,30 @@
-"""Build the README graphics.
+"""Command line: `uv run readme` draws every card and points README.md at them.
 
-    python Scripts/readme static            # -> Assets/Readme, and repoints README.md
+    uv run readme           # same as `readme build`
+    uv run readme photos    # re-crop the photos first, after adding or changing one
 
 Every file name carries a hash of its contents (hero-dark.1a2b3c4d.svg). A
 changed card gets a new URL, so browsers and GitHub's cache can never show an
 old card next to its new link buttons.
 """
 
-from __future__ import annotations
-
 import argparse
 import hashlib
 import re
-import sys
 from pathlib import Path
 
-from svg import ROOT, THEMES
+from .about import about
+from .cards import all_cards
+from .dock import all_docks
+from .footer import footer
+from .hero import hero
+from .intro import intro
+from .paths import ASSETS, README, ROOT
+from .svg import THEMES
+from .terminal import documents, paths, youtube
 
-STATIC_OUT = ROOT / "Assets" / "Readme"
 
-
-def build_static(out: Path) -> None:
-    from about import about
-    from cards import all_cards
-    from dock import all_docks
-    from footer import footer
-    from hero import hero
-    from intro import intro
-    from terminal import documents, paths, youtube
-
+def build(out: Path = ASSETS) -> None:
     (out / "dock").mkdir(parents=True, exist_ok=True)
     written: dict[str, Path] = {}  # "hero-dark" -> Assets/Readme/hero-dark.<hash>.svg
     for t in THEMES:
@@ -54,26 +50,28 @@ def build_static(out: Path) -> None:
         if old not in keep:
             old.unlink()
     _repoint_readme(out, written)
+    print(f"readme: {len(written)} cards in {out.relative_to(ROOT).as_posix()}, README.md updated")
 
 
 def _repoint_readme(out: Path, written: dict[str, Path]) -> None:
-    readme = ROOT / "README.md"
-    text = readme.read_text(encoding="utf-8")
+    text = README.read_text(encoding="utf-8")
     prefix = out.relative_to(ROOT).as_posix()
     for stem, path in written.items():
         pattern = rf"{re.escape(prefix)}/{re.escape(stem)}(?:\.[0-9a-f]{{8}})?\.svg"
         text = re.sub(pattern, path.relative_to(ROOT).as_posix(), text)
-    readme.write_text(text, encoding="utf-8")
+    README.write_text(text, encoding="utf-8")
 
 
-def main(argv: list[str]) -> int:
-    parser = argparse.ArgumentParser(prog="readme")
-    sub = parser.add_subparsers(dest="cmd", required=True)
-    sub.add_parser("static")
-    parser.parse_args(argv)
-    build_static(STATIC_OUT)
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(prog="readme", description="Draw the cards for the profile README.")
+    sub = parser.add_subparsers(dest="cmd")
+    sub.add_parser("build", help="draw every card into Assets/Readme and update README.md (the default)")
+    sub.add_parser("photos", help="re-crop the photos the cards embed (needs Pillow from the dev group)")
+    args = parser.parse_args(argv)
+    if args.cmd == "photos":
+        from .photos import crop_all
+
+        crop_all()
+    else:
+        build()
     return 0
-
-
-if __name__ == "__main__":
-    sys.exit(main(sys.argv[1:]))

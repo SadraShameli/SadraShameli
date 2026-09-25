@@ -4,17 +4,15 @@ Photos are pre-cropped by prep_images.py and embedded as data URIs so each
 card is a single self-contained file.
 """
 
-from __future__ import annotations
-
 import base64
 from dataclasses import dataclass
 from functools import lru_cache
 
-from dock import docked
-from svg import (
+from .dock import docked
+from .paths import CARD_IMAGES
+from .svg import (
     DISPLAY,
     MONO,
-    ROOT,
     SANS,
     Theme,
     card_frame,
@@ -40,7 +38,7 @@ class Project:
 
 @lru_cache(maxsize=None)
 def embed_jpeg(name: str) -> str:
-    data = (ROOT / "Images" / "Cards" / f"{name}.jpg").read_bytes()
+    data = (CARD_IMAGES / f"{name}.jpg").read_bytes()
     return "data:image/jpeg;base64," + base64.b64encode(data).decode()
 
 

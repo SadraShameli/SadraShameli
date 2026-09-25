@@ -1,9 +1,7 @@
 """The intro, drawn instead of written: an end-to-end pipeline, then by day / by night."""
 
-from __future__ import annotations
-
-from cards import wrap
-from svg import MONO, SANS, Theme, card_frame, clip_card, document, esc, font_css
+from .cards import wrap
+from .svg import MONO, SANS, Theme, card_frame, clip_card, document, esc, font_css
 
 W, H = 1000, 340
 
