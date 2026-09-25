@@ -17,7 +17,7 @@ On the first run uv fetches Python 3.14 and the dev group (Pillow, only used by 
 | `about.py` | `neofetch --stack`: the `>_` LED matrix with the tech stack chips beside it |
 | `stack.py` | the tech stack chip rows drawn inside the `neofetch` card (edit `STACK`) |
 | `cards.py` | project cards and tiles (edit `FEATURED` / `TILES` to change the copy) |
-| `terminal.py` | the terminals: YouTube, documents, and the hiring / developer / robot ones (edit `HIRING`, `DEVELOPER`, `ME`) |
+| `terminal.py` | the YouTube and documents terminals (edit `VIDEOS`, `DOCUMENTS`) |
 | `dock.py` | the link buttons that form the bottom edge of a card (edit `DOCKS`); `readme_html()` prints the matching README markup |
 | `footer.py` | the `exit` at the bottom |
 | `svg.py` | themes, embedded fonts, text measuring |

@@ -58,35 +58,26 @@ DOCKS: dict[str, tuple[int, list[list[Link]]]] = {
         Link("Indoor test drive", "https://www.youtube.com/shorts/abyVlfAETG0", "play"),
         Link("Channel", YOUTUBE, "youtube"),
     ]]),
-    "sh-hiring": (14, [
-        [
-            Link("Nobears", "https://www.nobears.com", "globe"),
-            Link("Blue Star Planning", "https://bluestarplanning.com", "globe"),
-            Link("Email", EMAIL, "mail"),
-        ],
+    "documents": (14, [
         [
             Link("Resume · full-stack", RESUME, "doc"),
             Link("Resume · quant", RESUME_QUANT, "doc"),
             Link("Letter of recommendation", LETTER, "doc"),
+            Link("A.I. thesis (PWS)", THESIS, "doc"),
+        ],
+        [  # where I work(ed) and how to reach me
+            Link("Nobears", "https://www.nobears.com", "globe"),
+            Link("Blue Star Planning", "https://bluestarplanning.com", "globe"),
+            Link("LinkedIn", LINKEDIN, "linkedin"),
+            Link("Email", EMAIL, "mail"),
+        ],
+        [  # code worth reading
+            Link("IMA-ADPCM encoder", "https://github.com/SadraShameli/sensorhub/blob/main/include/AdpcmRecorder.h", "github"),
+            Link("Service kernel", "https://github.com/SadraShameli/sensorhub/blob/main/src/core/Kernel.cpp", "github"),
+            Link("sadra.nl source", "https://github.com/SadraShameli/sadra.nl", "github"),
+            Link("README generator", "src/readme", "github"),
         ],
     ]),
-    "sh-developer": (14, [[
-        Link("IMA-ADPCM encoder", "https://github.com/SadraShameli/sensorhub/blob/main/include/AdpcmRecorder.h", "github"),
-        Link("Service kernel", "https://github.com/SadraShameli/sensorhub/blob/main/src/core/Kernel.cpp", "github"),
-        Link("sadra.nl source", "https://github.com/SadraShameli/sadra.nl", "github"),
-        Link("src/readme", "src/readme", "github"),
-    ]]),
-    "sh-robot": (14, [[
-        Link("sadra.nl", "https://sadra.nl", "globe"),
-        Link("LinkedIn", LINKEDIN, "linkedin"),
-        Link("YouTube", YOUTUBE, "youtube"),
-    ]]),
-    "documents": (14, [[
-        Link("Resume · full-stack", RESUME, "doc"),
-        Link("Resume · quant", RESUME_QUANT, "doc"),
-        Link("Letter of recommendation", LETTER, "doc"),
-        Link("A.I. thesis (PWS)", THESIS, "doc"),
-    ]]),
 }
 
 # LinkedIn isn't in simple-icons any more; this is its well-known 24x24 glyph

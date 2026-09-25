@@ -34,8 +34,11 @@ def about(t: Theme) -> str:
     cmd = "neofetch --stack"
     out_t = 0.35 + len(cmd) * 0.07 + 0.35
     my = out_y - 6
-    stack_svg, stack_css, stack_bottom = stack_rows(t, info_x, W - x0, my, start=out_t + 0.3, label_w=118)
     matrix_bottom = my + len(MATRIX) * (CELL + GAP)
+    # the stack sits beside the logo, then flows out to the full width below it
+    stack_svg, stack_css, stack_bottom = stack_rows(
+        t, info_x, W - x0, my, start=out_t + 0.3, label_w=118, wrap_left=x0, wrap_below=matrix_bottom + 6,
+    )
     prompt_y = max(stack_bottom, matrix_bottom) + 48
     H = prompt_y + 34
 

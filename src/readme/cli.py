@@ -21,7 +21,7 @@ from .hero import hero
 from .intro import intro
 from .paths import ASSETS, README, ROOT
 from .svg import THEMES
-from .terminal import documents, paths, youtube
+from .terminal import documents, youtube
 
 
 def build(out: Path = ASSETS) -> None:
@@ -35,7 +35,6 @@ def build(out: Path = ASSETS) -> None:
             "youtube": youtube(t),
             "documents": documents(t),
             "footer": footer(t),
-            **paths(t),
             **all_cards(t),
             **all_docks(t),
         }
