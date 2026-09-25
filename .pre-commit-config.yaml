@@ -1,0 +1,47 @@
+# the python lives in generator/, the rest is output (Assets/Readme, README.md) and media
+exclude: ^(Assets|Documents|Images)/
+default_install_hook_types: [pre-push]
+repos:
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v6.0.0
+      hooks:
+          - id: trailing-whitespace
+            stages: [manual]
+          - id: end-of-file-fixer
+            stages: [manual]
+          - id: check-yaml
+            stages: [pre-push]
+          - id: check-toml
+            stages: [pre-push]
+          - id: check-ast
+            stages: [pre-push]
+          - id: check-json
+            stages: [pre-push]
+          - id: check-added-large-files
+            args: ['--maxkb=1000']
+            stages: [pre-push]
+    - repo: https://github.com/astral-sh/ruff-pre-commit
+      rev: v0.16.8
+      hooks:
+          - id: ruff-check
+            args: [--no-fix]
+            stages: [pre-push]
+          - id: ruff-format
+            args: [--check]
+            stages: [pre-push]
+    - repo: https://github.com/astral-sh/uv-pre-commit
+      rev: 0.12.17
+      hooks:
+          - id: uv-lock
+            args: [--check, --directory, generator]
+            files: ^generator/(uv\.lock|pyproject\.toml)$
+            stages: [pre-push]
+    - repo: local
+      hooks:
+          - id: ty
+            name: ty
+            entry: uv run --directory generator --frozen ty check
+            language: system
+            types: [python]
+            pass_filenames: false
+            stages: [pre-push]
