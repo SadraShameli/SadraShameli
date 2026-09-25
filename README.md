@@ -25,8 +25,8 @@
 
 <p>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/about-dark.e4e5f562.svg">
-  <img align="top" alt="neofetch --stack: my tech stack. Web: TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, tRPC, TanStack Query, Zod, Better Auth. Backend: PHP, WordPress, WooCommerce, Twig, .NET, Node.js, Bun. Data: PostgreSQL, Drizzle, MySQL, Redis. Firmware: C++, ESP-IDF, FreeRTOS, Arduino, PlatformIO. Quant &amp; ML: Python, PyTorch, NumPy, Pandas, Pydantic, TensorFlow. Ship it: Docker, GitHub Actions, Vercel, Sentry, Vitest, Playwright, Git. Make it: Fusion 360, Blender, PrusaSlicer, Prusa MK3S+, Prusa Mini+, Vertex K8400" src="Assets/Readme/about-light.9edefa98.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/about-dark.fb3a8ee2.svg">
+  <img align="top" alt="neofetch --stack: my tech stack. Web: TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, tRPC, TanStack Query, Zod, Better Auth. Backend: PHP, WordPress, WooCommerce, Twig, .NET, Node.js, Bun. Data: PostgreSQL, Drizzle, MySQL, Redis. Firmware: C++, ESP-IDF, FreeRTOS, Arduino, PlatformIO. Quant &amp; ML: Python, PyTorch, NumPy, Pandas, Pydantic, TensorFlow. Ship it: Docker, GitHub Actions, Vercel, Sentry, Vitest, Playwright, Git. Make it: Fusion 360, Blender, PrusaSlicer, Prusa MK3S+, Prusa Mini+, Vertex K8400" src="Assets/Readme/about-light.8be12a27.svg" width="100%">
 </picture>
 </p>
 

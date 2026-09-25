@@ -42,10 +42,10 @@ def about(t: Theme) -> str:
     H = prompt_y + 34
 
     css = [
-        font_css(("sgm", 400), ("sgm", 600), ("sgs", 400)),
+        font_css(("sgm", 400), ("sgs", 400)),
         stack_css,
         f"text{{font-family:{MONO};font-size:{FS}px}}",
-        f".k{{fill:{t.text};font-weight:600}}.v{{fill:{t.muted}}}.g{{fill:{t.green}}}.f{{fill:{t.faint}}}",
+        f".v{{fill:{t.muted}}}.g{{fill:{t.green}}}.f{{fill:{t.faint}}}",
         "@keyframes in{from{opacity:0}to{opacity:1}}",
         "@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}",
     ]

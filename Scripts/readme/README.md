@@ -10,10 +10,10 @@ python3 Scripts/readme static   # every card -> Assets/Readme, then repoints REA
 |---|---|
 | `intro.py` | the intro: the end-to-end pipeline and the by day / by night panels |
 | `hero.py` | the banner: the `whoami` typo gag and the isometric SensorHub with its firmware's LED pattern |
-| `about.py` | `neofetch`, but it's me |
+| `about.py` | `neofetch --stack`: the `>_` LED matrix with the tech stack chips beside it |
 | `cards.py` | project cards and tiles (edit `FEATURED` / `TILES` to change the copy) |
-| `stack.py` | the tech stack chips (edit `STACK`) |
-| `terminal.py` | the terminals: YouTube, documents, and the hiring / developer / robot / Sandra ones (edit `HIRING`, `DEVELOPER`, `ME`) |
+| `stack.py` | the tech stack chip rows drawn inside the `neofetch` card (edit `STACK`) |
+| `terminal.py` | the terminals: YouTube, documents, and the hiring / developer / robot ones (edit `HIRING`, `DEVELOPER`, `ME`) |
 | `footer.py` | the `exit` at the bottom |
 | `dock.py` | the link buttons that form the bottom edge of a card (edit `DOCKS`); `readme_html()` prints the matching README markup |
 | `svg.py` | themes, embedded fonts, text measuring |
