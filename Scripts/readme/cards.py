@@ -7,7 +7,7 @@ card is a single self-contained file.
 from __future__ import annotations
 
 import base64
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from functools import lru_cache
 
 from dock import docked
@@ -36,7 +36,6 @@ class Project:
     link: str
     specs: tuple[tuple[str, str], ...] = ()
     image: str | None = None  # Images/Cards/<image>.jpg
-    images: tuple[str, ...] = field(default_factory=tuple)  # collage
 
 
 @lru_cache(maxsize=None)
@@ -356,14 +355,7 @@ def tile(t: Theme, p: Project) -> str:
     W, H = TILE_W, TILE_H
     css = [_base_css(t)]
     body = ["<defs>" + clip_card("clip", W, H) + "</defs>", card_frame(t, W, H), '<g clip-path="url(#clip)">']
-    if p.images:
-        half = W / len(p.images)
-        for i, name in enumerate(p.images):
-            body.append(photo(t, name, i * half, 0, half, IMG_H, fade_to="#000"))
-        body.append(f'<line x1="{half:.1f}" y1="0" x2="{half:.1f}" y2="{IMG_H}" stroke="{t.bg}" stroke-width="3"/>')
-        body.append(corner_marks(0, 0, W, IMG_H, "tl tr"))
-    else:
-        body.append(showcase(t, p.image, W, IMG_H))
+    body.append(showcase(t, p.image, W, IMG_H))
     body.append(f'<line x1="0" y1="{IMG_H}" x2="{W}" y2="{IMG_H}" stroke="{t.border}"/>')
     x, right = 28, W - 28
     body.append(f'<text x="{x}" y="{IMG_H + 38}" class="eb" font-size="11">{esc(p.eyebrow)}</text>')
@@ -478,7 +470,7 @@ TILES = [
         desc="Where it started: an Arduino Mega robot on a custom PCB packed with RFID, keypad, LCD "
         "and motor drivers, and a 3D-printed social robot with ultrasonic eyes.",
         link="↗ youtube.com/@SadraShameli",
-        images=("robot", "socialrobot"),
+        image="shot-robot",
     ),
 ]
 

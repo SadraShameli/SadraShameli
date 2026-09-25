@@ -27,7 +27,6 @@ def build_static(out: Path) -> None:
     from footer import footer
     from hero import hero
     from intro import intro
-    from stack import stack
     from terminal import documents, paths, youtube
 
     (out / "dock").mkdir(parents=True, exist_ok=True)
@@ -37,7 +36,6 @@ def build_static(out: Path) -> None:
             "hero": hero(t),
             "intro": intro(t),
             "about": about(t),
-            "stack": stack(t),
             "youtube": youtube(t),
             "documents": documents(t),
             "footer": footer(t),

@@ -22,8 +22,8 @@ JOBS = {
     "shot-sadra-nl": ("Images/Screenshots/sadra-nl.jpg", 418, 261, 0.5, 0.0),
     "shot-prop-calculator": ("Images/Screenshots/prop-calculator.jpg", 418, 261, 0.5, 0.0),
     "shot-minomarkt-nl": ("Images/Screenshots/minomarkt-nl.jpg", 418, 261, 0.5, 0.0),
-    "robot": ("Images/Robot.jpg", 245, 250, 0.5, 0.5),
-    "socialrobot": ("Images/SocialRobot.jpg", 245, 250, 0.45, 0.5),
+    # the early-lab robot, framed the same way
+    "shot-robot": ("Images/Robot.jpg", 418, 261, 0.5, 0.5),
     # YouTube thumbnails: the videos are vertical, so keep the 9:16 middle
     "yt-line-detection": ("Images/YouTube/1142rRZ3rzc.jpg", 126, 224, 0.5, 0.5),
     "yt-lidar-ranging": ("Images/YouTube/_C8PnLK2SWA.jpg", 126, 224, 0.5, 0.5),

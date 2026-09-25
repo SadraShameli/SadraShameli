@@ -25,8 +25,8 @@
 
 <p>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/about-dark.59ed6bd2.svg">
-  <img align="top" alt="neofetch-style card: full-stack developer at Nobears, 4+ years shipping production code, TypeScript, Python, C++, PHP, SQL" src="Assets/Readme/about-light.cfc6cbdd.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/about-dark.e4e5f562.svg">
+  <img align="top" alt="neofetch --stack: my tech stack. Web: TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, tRPC, TanStack Query, Zod, Better Auth. Backend: PHP, WordPress, WooCommerce, Twig, .NET, Node.js, Bun. Data: PostgreSQL, Drizzle, MySQL, Redis. Firmware: C++, ESP-IDF, FreeRTOS, Arduino, PlatformIO. Quant &amp; ML: Python, PyTorch, NumPy, Pandas, Pydantic, TensorFlow. Ship it: Docker, GitHub Actions, Vercel, Sentry, Vitest, Playwright, Git. Make it: Fusion 360, Blender, PrusaSlicer, Prusa MK3S+, Prusa Mini+, Vertex K8400" src="Assets/Readme/about-light.9edefa98.svg" width="100%">
 </picture>
 </p>
 
@@ -53,16 +53,7 @@
 </p>
 <p>
   <a href="https://minomarkt.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-minomarkt-dark.b34a361e.svg"><img alt="Mino Markt: WooCommerce storefront for a Persian market and grill in Alkmaar" src="Assets/Readme/tile-minomarkt-light.58ac08b9.svg" width="49%"></picture></a>
-  <a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-lab-dark.14d0f8da.svg"><img alt="The early lab: an Arduino Mega robot on a custom PCB and a 3D-printed social robot" src="Assets/Readme/tile-lab-light.e79e0a36.svg" width="49%"></picture></a>
-</p>
-
-<br>
-
-<p>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/stack-dark.427d8c99.svg">
-  <img align="top" alt="Tech stack. Web: TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, tRPC, TanStack Query, Zod, Better Auth. Backend: PHP, WordPress, WooCommerce, Twig, .NET, Node.js, Bun. Data: PostgreSQL, Drizzle, MySQL, Redis. Firmware: C++, ESP-IDF, FreeRTOS, Arduino, PlatformIO. Quant and ML: Python, PyTorch, NumPy, Pandas, Pydantic, TensorFlow. Shipping: Docker, GitHub Actions, Vercel, Sentry, Vitest, Playwright, Git. Making: Fusion 360, Blender, PrusaSlicer, Prusa MK3S+, Prusa Mini+, Vertex K8400." src="Assets/Readme/stack-light.d4366f75.svg" width="100%">
-</picture>
+  <a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/tile-lab-dark.38799377.svg"><img alt="The early lab: an Arduino Mega robot on a custom PCB and a 3D-printed social robot" src="Assets/Readme/tile-lab-light.49e4d2ea.svg" width="49%"></picture></a>
 </p>
 
 <br>
@@ -88,13 +79,6 @@
 <p>
 <a href="https://sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-robot-dark.ed8fa243.svg"><img align="top" alt="cat sadra.json: name Sadra Shameli, not Sandra, location Rijswijk NL, roles full-stack developer, futures trader, hardware tinkerer" src="Assets/Readme/sh-robot-light.0ca609d1.svg" width="100%"></picture></a><br>
 <a href="https://sadra.nl"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-robot-0-0-dark.65f1991a.svg"><img align="top" alt="sadra.nl" src="Assets/Readme/dock/sh-robot-0-0-light.8728f071.svg" width="33.3333%"></picture></a><a href="https://linkedin.com/in/sadrashameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-robot-0-1-dark.aa34a38d.svg"><img align="top" alt="LinkedIn" src="Assets/Readme/dock/sh-robot-0-1-light.65f9039f.svg" width="33.3333%"></picture></a><a href="https://youtube.com/@SadraShameli"><picture><source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/dock/sh-robot-0-2-dark.8b153ac9.svg"><img align="top" alt="YouTube" src="Assets/Readme/dock/sh-robot-0-2-light.307ec3b7.svg" width="33.3333%"></picture></a>
-</p>
-
-<p>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="Assets/Readme/sh-sandra-dark.41eb4faa.svg">
-  <img align="top" alt="whois sandra: No match for SANDRA. Wrong profile, but honestly, I get that a lot. Good luck finding her." src="Assets/Readme/sh-sandra-light.df5a29ea.svg" width="100%">
-</picture>
 </p>
 
 <br>

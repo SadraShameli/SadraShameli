@@ -1,12 +1,15 @@
-"""`neofetch`, but it's me. Plays once: types the command, prints the output."""
+"""`neofetch --stack`: the ">_" LED matrix on the left, my tech stack on the right.
+
+Plays once: types the command, lights the matrix, then the stack chips rise in.
+"""
 
 from __future__ import annotations
 
-from svg import MONO, MONO_ADVANCE, Theme, card_frame, clip_card, document, esc, font_css
+from stack import STACK, stack_rows, stack_summary
+from svg import MONO, MONO_ADVANCE, Theme, card_frame, clip_card, document, font_css
 
 W = 1000
 FS = 15
-LH = 23
 CW = FS * MONO_ADVANCE
 
 # ">_" on a 10x9 LED matrix
@@ -23,18 +26,6 @@ MATRIX = [
 ]
 CELL, GAP = 15, 3
 
-INFO = [
-    ("Role", "Full-stack developer @ Nobears, Rotterdam"),
-    ("Uptime", "4+ years shipping production code"),
-    ("Languages", "TypeScript · Python · C++ · PHP · SQL"),
-    ("Web", "Next.js · React · tRPC · Drizzle · Tailwind"),
-    ("CMS", "WordPress · WooCommerce · Twig · 15+ sites live"),
-    ("Firmware", "ESP32 · ESP-IDF · FreeRTOS · BME680 · I²S mics"),
-    ("Quant", "PyTorch · NumPy · Pandas · Redis · Docker"),
-    ("Printers", "Prusa MK3S+ · Prusa Mini+ · Vertex K8400"),
-    ("Currently", "teaching a Python engine to trade NQ futures"),
-    ("Known issue", "people read my name as Sandra (wontfix)"),
-]
 
 
 def about(t: Theme) -> str:
@@ -42,12 +33,17 @@ def about(t: Theme) -> str:
     cmd_y = title_h + 38
     out_y = cmd_y + 40
     info_x = x0 + len(MATRIX[0]) * (CELL + GAP) + 44
-    rows = 2 + len(INFO) + 2  # user@host, rule, info…, gap, swatches
-    prompt_y = out_y + rows * LH + 18
+    cmd = "neofetch --stack"
+    out_t = 0.35 + len(cmd) * 0.07 + 0.35
+    my = out_y - 6
+    stack_svg, stack_css, stack_bottom = stack_rows(t, info_x, W - x0, my, start=out_t + 0.3, label_w=118)
+    matrix_bottom = my + len(MATRIX) * (CELL + GAP)
+    prompt_y = max(stack_bottom, matrix_bottom) + 48
     H = prompt_y + 34
 
     css = [
-        font_css(("sgm", 400), ("sgm", 600)),
+        font_css(("sgm", 400), ("sgm", 600), ("sgs", 400)),
+        stack_css,
         f"text{{font-family:{MONO};font-size:{FS}px}}",
         f".k{{fill:{t.text};font-weight:600}}.v{{fill:{t.muted}}}.g{{fill:{t.green}}}.f{{fill:{t.faint}}}",
         "@keyframes in{from{opacity:0}to{opacity:1}}",
@@ -77,16 +73,14 @@ def about(t: Theme) -> str:
 
     # the command, typed
     body.append(f'<text x="{x0}" y="{cmd_y}"><tspan class="g">~</tspan><tspan class="v"> $ </tspan></text>')
-    cmd = "neofetch"
     for i, ch in enumerate(cmd):
-        body.append(
-            f'<text x="{x0 + (4 + i) * CW:.2f}" y="{cmd_y}" fill="{t.text}" '
-            f'class="{appear(0.35 + i * 0.07)}">{ch}</text>'
-        )
-    out_t = 0.35 + len(cmd) * 0.07 + 0.35
+        if ch != " ":
+            body.append(
+                f'<text x="{x0 + (4 + i) * CW:.2f}" y="{cmd_y}" fill="{t.text}" '
+                f'class="{appear(0.35 + i * 0.07)}">{ch}</text>'
+            )
 
     # logo: LEDs power on one by one, in reading order
-    my = out_y - 6
     lit_i = 0
     for r, row in enumerate(MATRIX):
         for c, ch in enumerate(row):
@@ -102,34 +96,12 @@ def about(t: Theme) -> str:
                     f'<rect x="{x}" y="{yy}" width="{CELL}" height="{CELL}" rx="3" fill="{t.faint}" fill-opacity=".22"/>'
                 )
 
-    # info column
-    y = out_y
-    delay = out_t + 0.1
-    body.append(
-        f'<text x="{info_x:.1f}" y="{y}" class="{appear(delay)}">'
-        f'<tspan class="g" font-weight="600">sadra</tspan><tspan class="v">@</tspan>'
-        f'<tspan class="g" font-weight="600">rijswijk</tspan></text>'
-    )
-    y += LH
-    body.append(f'<text x="{info_x:.1f}" y="{y}" class="f {appear(delay + 0.06)}">{"─" * 14}</text>')
-    key_w = max(len(k) for k, _ in INFO) + 2
-    for i, (k, v) in enumerate(INFO):
-        y += LH
-        body.append(
-            f'<text x="{info_x:.1f}" y="{y}" class="{appear(delay + 0.12 + i * 0.07)}" xml:space="preserve">'
-            f'<tspan class="k">{esc(k)}</tspan><tspan class="v" x="{info_x + key_w * CW:.1f}">{esc(v)}</tspan></text>'
-        )
-    y += LH * 2
-    swatch_t = delay + 0.12 + len(INFO) * 0.07 + 0.1
-    swatches = [t.text, t.muted, t.faint, t.border, t.red, t.yellow, t.green, "#3b82f6"]
-    sw = [f'<g class="{appear(swatch_t)}">']
-    for i, c in enumerate(swatches):
-        sw.append(f'<rect x="{info_x + i * 30:.1f}" y="{y - 15}" width="30" height="18" fill="{c}"/>')
-    sw.append("</g>")
-    body.extend(sw)
+    # the stack, beside the matrix
+    body.append(stack_svg)
 
     # fresh prompt with a blinking cursor
-    p_cls = appear(swatch_t + 0.25)
+    chips = sum(len(items) for _, items in STACK)
+    p_cls = appear(out_t + 0.3 + chips * 0.025 + 0.3)
     body.append(
         f'<g class="{p_cls}"><text x="{x0}" y="{prompt_y}"><tspan class="g">~</tspan>'
         f'<tspan class="v"> $ </tspan></text>'
@@ -143,6 +115,6 @@ def about(t: Theme) -> str:
         H,
         "".join(body),
         "".join(css),
-        title="neofetch — sadra@rijswijk",
-        desc="; ".join(f"{k}: {v}" for k, v in INFO),
+        title="neofetch --stack",
+        desc=stack_summary(),
     )

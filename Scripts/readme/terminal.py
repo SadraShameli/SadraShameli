@@ -379,26 +379,6 @@ def robot(t: Theme) -> str:
     return term.render(prompt_y + 30, (("sgm", 400), ("sgm", 600)), "sadra.json: " + ", ".join(f"{k}: {v}" for k, v in ME.items()), docked("sh-robot"))
 
 
-def sandra(t: Theme) -> str:
-    W, x0, cmd_y = 1000, 36, 84
-    term = Terminal(t, W, "sadra@rijswijk: ~")
-    done = term.command(x0, cmd_y, "~", "whois sandra", "looking for sandra?")
-    lines = [
-        (f'<tspan fill="{t.text}">No match for "SANDRA".</tspan>', 0.3),
-        (f'<tspan fill="{t.green}"># wrong profile, but honestly, I get that a lot. good luck finding her &lt;3</tspan>', 0.5),
-    ]
-    y = cmd_y + 36
-    delay = done
-    for svg, gap in lines:
-        delay += gap
-        term.body.append(f'<text x="{x0}" y="{y}" class="{term.appear(delay)}">{svg}</text>')
-        y += 26
-    prompt_y = y + 16
-    cx = term.prompt(x0, prompt_y, "~")
-    term.cursor(cx, prompt_y, delay + 0.3)
-    return term.render(prompt_y + 30, (("sgm", 400),), "whois sandra: no match. Wrong profile, but I get that a lot.")
-
-
 def paths(t: Theme) -> dict[str, str]:
     return {
         "sh-hiring": notes(
@@ -410,5 +390,4 @@ def paths(t: Theme) -> dict[str, str]:
             "The interesting technical bits.",
         ),
         "sh-robot": robot(t),
-        "sh-sandra": sandra(t),
     }
